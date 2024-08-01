@@ -1,4 +1,4 @@
-package ba.minecraft.uniquematerials.common.item.base;
+package ba.minecraft.uniquematerials.common.items.base;
 
 import com.google.common.base.Supplier;
 
@@ -15,7 +15,7 @@ public abstract class BaseItemRegistry {
 		return registry.register(name, () -> 
 		{ 
 			Properties properties = new Properties();
-			properties.stacksTo(Item.MAX_STACK_SIZE);
+			properties.stacksTo(Item.DEFAULT_MAX_STACK_SIZE);
 			return new BlockItem(supplier.get(), properties);
 		});
 	}

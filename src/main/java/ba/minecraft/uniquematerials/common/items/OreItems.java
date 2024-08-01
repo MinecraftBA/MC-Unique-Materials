@@ -1,9 +1,9 @@
-package ba.minecraft.uniquematerials.common.item;
+package ba.minecraft.uniquematerials.common.items;
 
 import com.google.common.base.Supplier;
 
 import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
-import ba.minecraft.uniquematerials.common.item.base.BaseItemRegistry;
+import ba.minecraft.uniquematerials.common.items.base.BaseItemRegistry;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;

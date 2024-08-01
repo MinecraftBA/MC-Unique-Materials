@@ -2,7 +2,7 @@ package ba.minecraft.uniquematerials.common.core;
 
 import com.mojang.logging.LogUtils;
 
-import ba.minecraft.uniquematerials.common.item.OreItems;
+import ba.minecraft.uniquematerials.common.items.OreItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
