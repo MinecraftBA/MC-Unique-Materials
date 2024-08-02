@@ -1,5 +1,9 @@
 package ba.minecraft.uniquematerials.common.blocks;
 
+import ba.minecraft.uniquematerials.common.blocks.ore.base.DeepslateFoundOreBlock;
+import ba.minecraft.uniquematerials.common.blocks.ore.base.NetherrackFoundOreBlock;
+import ba.minecraft.uniquematerials.common.blocks.ore.base.RawOreBlock;
+import ba.minecraft.uniquematerials.common.blocks.ore.base.StoneFoundOreBlock;
 import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
