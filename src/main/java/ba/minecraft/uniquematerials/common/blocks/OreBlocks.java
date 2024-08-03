@@ -5,8 +5,10 @@ import ba.minecraft.uniquematerials.common.blocks.ore.base.NetherrackFoundOreBlo
 import ba.minecraft.uniquematerials.common.blocks.ore.base.RawOreBlock;
 import ba.minecraft.uniquematerials.common.blocks.ore.base.StoneFoundOreBlock;
 import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -27,7 +29,7 @@ public final class OreBlocks {
 			REGISTRY.register("deepslate_rutile_ore", () -> new DeepslateFoundOreBlock());
 
 	public static final RegistryObject<Block> RAW_RUTILE_BLOCK =
-			REGISTRY.register("raw_rutile_block", () -> new RawOreBlock(MaterialColor.CRIMSON_HYPHAE));
+			REGISTRY.register("raw_rutile_block", () -> new RawOreBlock(MapColor.CRIMSON_HYPHAE));
 
 	public static final RegistryObject<Block> TITANIUM_BLOCK =
 			REGISTRY.register("titanium_block", () -> new TitaniumBlock());
@@ -41,7 +43,7 @@ public final class OreBlocks {
 			REGISTRY.register("deepslate_bauxite_ore", () -> new DeepslateFoundOreBlock());
 	
 	public static final RegistryObject<Block> RAW_BAUXITE_BLOCK = 
-			REGISTRY.register("raw_bauxite_block", () -> new RawOreBlock(MaterialColor.METAL));
+			REGISTRY.register("raw_bauxite_block", () -> new RawOreBlock(MapColor.METAL));
 	
 	public static final RegistryObject<Block> ALUMINIUM_BLOCK = 
 			REGISTRY.register("aluminium_block", () -> new AluminiumBlock());
@@ -55,7 +57,7 @@ public final class OreBlocks {
 			REGISTRY.register("red_sand_halite_ore", () -> new SandFoundOreBlock());
 	
 	public static final RegistryObject<Block> RAW_HALITE_BLOCK =
-			REGISTRY.register("raw_halite_block", () -> new RawOreBlock(MaterialColor.QUARTZ));
+			REGISTRY.register("raw_halite_block", () -> new RawOreBlock(MapColor.QUARTZ));
 
 	// Olivine => Silicon
 	
@@ -69,7 +71,7 @@ public final class OreBlocks {
 			REGISTRY.register("silicon_block", () -> new SiliconBlock());
 	
 	public static final RegistryObject<Block> RAW_OLIVINE_BLOCK =
-			REGISTRY.register("raw_olivine_block", () -> new RawOreBlock(MaterialColor.GRASS));
+			REGISTRY.register("raw_olivine_block", () -> new RawOreBlock(MapColor.GRASS));
 	
 	// Silver
 	
@@ -96,7 +98,7 @@ public final class OreBlocks {
 			REGISTRY.register("galena_ore", () -> new StoneFoundOreBlock());
 	
 	public static final RegistryObject<RawOreBlock> RAW_GALENA_BLOCK	 = 
-			REGISTRY.register("raw_galena_block", () -> new RawOreBlock(MaterialColor.CRIMSON_HYPHAE));
+			REGISTRY.register("raw_galena_block", () -> new RawOreBlock(MapColor.CRIMSON_HYPHAE));
 	
 	public static final RegistryObject<Block> LEAD_BLOCK = 
 			REGISTRY.register("lead_block", () -> new LeadBlock());

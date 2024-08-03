@@ -2,7 +2,10 @@ package ba.minecraft.uniquematerials.common.core;
 
 import com.mojang.logging.LogUtils;
 
+import ba.minecraft.uniquematerials.common.blocks.OreBlocks;
+import ba.minecraft.uniquematerials.common.blocks.TreeBlocks;
 import ba.minecraft.uniquematerials.common.items.OreItems;
+import ba.minecraft.uniquematerials.common.items.TreeItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -30,8 +33,13 @@ public class UniqueMaterialsMod
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        // Registration of mod provided blocks.
+        OreBlocks.REGISTRY.register(modEventBus);
+        TreeBlocks.REGISTRY.register(modEventBus);
+        
         // Registration of mod provided items.
         OreItems.REGISTRY.register(modEventBus);
+        TreeItems.REGISTRY.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

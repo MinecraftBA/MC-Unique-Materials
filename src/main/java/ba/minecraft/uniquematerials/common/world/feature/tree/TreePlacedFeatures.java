@@ -9,6 +9,9 @@ import ba.minecraft.uniquematerials.common.blocks.TreeBlocks;
 import ba.minecraft.uniquematerials.common.blocks.tree.TreeSaplingBlock;
 import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -24,6 +27,12 @@ public final class TreePlacedFeatures {
 
 	private TreePlacedFeatures() {
 	}
+	
+    public static void bootstrap(BootstrapContext<PlacedFeature> context) {
+    	
+        HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
+
+    }
 
 	public static final DeferredRegister<PlacedFeature> REGISTRY = 
 		DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, UniqueMaterialsMod.MODID);
