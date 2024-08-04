@@ -1,5 +1,6 @@
 package ba.minecraft.uniquematerials.common.blocks.ore.base;
 
+import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -11,6 +12,10 @@ public final class StoneFoundOreBlock extends DropExperienceBlock {
 	
 	public StoneFoundOreBlock(UniformInt xpRange) {
 		super(xpRange, PROPERTIES);
+	}
+
+	public StoneFoundOreBlock() {
+		super(ConstantInt.of(0), PROPERTIES);
 	}
 
 	private static Properties createProperties() {

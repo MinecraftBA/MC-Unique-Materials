@@ -13,7 +13,4 @@ public final class TreeMapColors {
 	public static final MapColor SEQUOIA_LOG = MapColor.COLOR_RED;
 	public static final MapColor SEQUOIA_BARK = MapColor.TERRACOTTA_ORANGE;
 	
-	public static final MapColor RUBBER_LOG = MapColor.COLOR_BROWN;
-	public static final MapColor RUBBER_BARK = MapColor.COLOR_LIGHT_GREEN;
-	
 }

@@ -2,6 +2,7 @@ package ba.minecraft.uniquematerials.common.world.feature.tree;
 
 import ba.minecraft.uniquematerials.common.helpers.ModConfiguredFeatureHelper;
 import net.minecraft.core.HolderGetter;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;

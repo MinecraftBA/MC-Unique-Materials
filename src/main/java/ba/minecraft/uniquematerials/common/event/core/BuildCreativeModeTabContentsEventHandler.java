@@ -35,12 +35,12 @@ public final class BuildCreativeModeTabContentsEventHandler {
 			event.accept(OreBlocks.DEEPSLATE_SILVER_ORE);
 
 			// Ores spawning instead of Red Sand.
-			event.accept(OreBlocks.RED_SAND_BLACK_DIAMOND_ORE);
-			event.accept(OreBlocks.RED_SAND_HALITE_ORE);
+			event.accept(OreBlocks.RED_SANDSTONE_BLACK_DIAMOND_ORE);
+			event.accept(OreBlocks.RED_SANDSTONE_HALITE_ORE);
 
 			// Ores spawning instead of Sand.
-			event.accept(OreBlocks.SAND_BLACK_DIAMOND_ORE);
-			event.accept(OreBlocks.SAND_HALITE_ORE);
+			event.accept(OreBlocks.SANDSTONE_BLACK_DIAMOND_ORE);
+			event.accept(OreBlocks.SANDSTONE_HALITE_ORE);
 
 			// Ores spawning in Nether.
 			event.accept(OreBlocks.NETHERRACK_CITRINE_ORE);

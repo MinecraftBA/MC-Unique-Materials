@@ -4,6 +4,8 @@ import java.util.concurrent.CompletableFuture;
 
 import ba.minecraft.uniquematerials.common.core.ModRegistries;
 import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
+import ba.minecraft.uniquematerials.datagen.blockstate.OreBlockStateProvider;
+import ba.minecraft.uniquematerials.datagen.blockstate.TreeBlockStateProvider;
 import net.minecraft.Util;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.DataGenerator;
@@ -34,6 +36,9 @@ public final class ModDataGenerators {
 
 		// Registration of mod features.
 		dataGen.addProvider(event.includeServer(), new ModDatapackBuiltinEntriesProvider(packOutput, modLookupProvider));
+
+		dataGen.addProvider(event.includeClient(), new OreBlockStateProvider(packOutput, exFileHelper));
+		dataGen.addProvider(event.includeClient(), new TreeBlockStateProvider(packOutput, exFileHelper));
 
 	}
 	

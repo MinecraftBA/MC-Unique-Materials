@@ -1,5 +1,6 @@
 package ba.minecraft.uniquematerials.common.blocks.ore.base;
 
+import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -12,6 +13,10 @@ public final class NetherrackFoundOreBlock extends DropExperienceBlock {
 
 	public NetherrackFoundOreBlock(UniformInt xpRange) {
 		super(xpRange, PROPERTIES);
+	}
+	
+	public NetherrackFoundOreBlock() {
+		super(ConstantInt.of(0), PROPERTIES);
 	}
 	
 	private static Properties createProperties() {
