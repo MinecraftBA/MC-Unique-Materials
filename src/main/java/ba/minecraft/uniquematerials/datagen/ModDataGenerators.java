@@ -6,6 +6,9 @@ import ba.minecraft.uniquematerials.common.core.ModRegistries;
 import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
 import ba.minecraft.uniquematerials.datagen.blockstate.OreBlockStateProvider;
 import ba.minecraft.uniquematerials.datagen.blockstate.TreeBlockStateProvider;
+import ba.minecraft.uniquematerials.datagen.model.item.OreItemModelProvider;
+import ba.minecraft.uniquematerials.datagen.model.item.TreeItemModelProvider;
+import ba.minecraft.uniquematerials.datagen.lang.EnUsLanguageProvider;
 import net.minecraft.Util;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.DataGenerator;
@@ -37,8 +40,16 @@ public final class ModDataGenerators {
 		// Registration of mod features.
 		dataGen.addProvider(event.includeServer(), new ModDatapackBuiltinEntriesProvider(packOutput, modLookupProvider));
 
+		// Item model providers
+		dataGen.addProvider(event.includeClient(), new OreItemModelProvider(packOutput, exFileHelper));
+		dataGen.addProvider(event.includeClient(), new TreeItemModelProvider(packOutput, exFileHelper));
+
 		dataGen.addProvider(event.includeClient(), new OreBlockStateProvider(packOutput, exFileHelper));
 		dataGen.addProvider(event.includeClient(), new TreeBlockStateProvider(packOutput, exFileHelper));
+		
+		// Language provider
+		dataGen.addProvider(event.includeClient(), new EnUsLanguageProvider(packOutput));
+
 
 	}
 	
