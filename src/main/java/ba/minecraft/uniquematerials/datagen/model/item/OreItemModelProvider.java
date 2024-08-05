@@ -32,8 +32,8 @@ public final class OreItemModelProvider extends BaseItemModelProvider {
 		blockItem(OreItems.RAW_BAUXITE_BLOCK.get());
 		blockItem(OreItems.ALUMINIUM_BLOCK.get());
 		
-		blockItem(OreItems.SAND_HALITE_ORE.get());
-		blockItem(OreItems.RED_SAND_HALITE_ORE.get());
+		blockItem(OreItems.SANDSTONE_HALITE_ORE.get());
+		blockItem(OreItems.RED_SANDSTONE_HALITE_ORE.get());
 		blockItem(OreItems.RAW_HALITE_BLOCK.get());
 		generated(OreItems.RAW_HALITE.get());
 
@@ -69,8 +69,8 @@ public final class OreItemModelProvider extends BaseItemModelProvider {
 
 		// Black diamond
 		
-		blockItem(OreItems.RED_SAND_BLACK_DIAMOND_ORE.get());
-		blockItem(OreItems.SAND_BLACK_DIAMOND_ORE.get());
+		blockItem(OreItems.RED_SANDSTONE_BLACK_DIAMOND_ORE.get());
+		blockItem(OreItems.SANDSTONE_BLACK_DIAMOND_ORE.get());
 	}
 
 }

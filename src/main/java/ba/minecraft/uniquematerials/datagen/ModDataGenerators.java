@@ -4,6 +4,12 @@ import java.util.concurrent.CompletableFuture;
 
 import ba.minecraft.uniquematerials.common.core.ModRegistries;
 import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
+import ba.minecraft.uniquematerials.datagen.tag.block.ForgeBlockTagsProvider;
+import ba.minecraft.uniquematerials.datagen.tag.block.MinecraftBlockTagsProvider;
+import ba.minecraft.uniquematerials.datagen.tag.block.ModBlockTagsProvider;
+import ba.minecraft.uniquematerials.datagen.tag.item.ForgeItemTagsProvider;
+import ba.minecraft.uniquematerials.datagen.tag.item.MinecraftItemTagsProvider;
+import ba.minecraft.uniquematerials.datagen.tag.item.ModItemTagsProvider;
 import ba.minecraft.uniquematerials.datagen.blockstate.OreBlockStateProvider;
 import ba.minecraft.uniquematerials.datagen.blockstate.TreeBlockStateProvider;
 import ba.minecraft.uniquematerials.datagen.model.item.OreItemModelProvider;
@@ -26,29 +32,44 @@ public final class ModDataGenerators {
 	public static void gatherData(final GatherDataEvent event) {
 
 		// Get reference to existing file helper.
-		ExistingFileHelper exFileHelper = event.getExistingFileHelper();
+		ExistingFileHelper fileHelper = event.getExistingFileHelper();
 
 		// Get reference to running instance of data generator.
-		DataGenerator dataGen = event.getGenerator();
+		DataGenerator generator = event.getGenerator();
 		
 		// Get reference to pack output.
-		PackOutput packOutput = dataGen.getPackOutput();
+		PackOutput packOutput = generator.getPackOutput();
 
 		// Get reference to Mod lookup provider.
-        CompletableFuture<Provider> modLookupProvider = CompletableFuture.supplyAsync(ModRegistries::createLookup, Util.backgroundExecutor());
+        CompletableFuture<Provider> provider = CompletableFuture.supplyAsync(ModRegistries::createLookup, Util.backgroundExecutor());
 
 		// Registration of mod features.
-		dataGen.addProvider(event.includeServer(), new ModDatapackBuiltinEntriesProvider(packOutput, modLookupProvider));
+		generator.addProvider(event.includeServer(), new ModDatapackBuiltinEntriesProvider(packOutput, provider));
 
+		// Registration of block tags providers.
+		MinecraftBlockTagsProvider minecraftBlockTagsProvider = new MinecraftBlockTagsProvider(packOutput, provider, fileHelper);
+        generator.addProvider(event.includeServer(), minecraftBlockTagsProvider);
+
+        ForgeBlockTagsProvider forgeBlockTagsProvider = new ForgeBlockTagsProvider(packOutput, provider, fileHelper);
+        generator.addProvider(event.includeServer(), forgeBlockTagsProvider);
+		
+        ModBlockTagsProvider modBlockTagsProvider = new ModBlockTagsProvider(packOutput, provider, fileHelper);
+        generator.addProvider(event.includeServer(), modBlockTagsProvider);
+
+        // Registration of item tags providers.
+        generator.addProvider(event.includeServer(), new MinecraftItemTagsProvider(packOutput, provider, minecraftBlockTagsProvider.contentsGetter(), fileHelper));
+        generator.addProvider(event.includeServer(), new ForgeItemTagsProvider(packOutput, provider, forgeBlockTagsProvider.contentsGetter(), fileHelper));
+        generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, provider, modBlockTagsProvider.contentsGetter(), fileHelper));
+		
 		// Item model providers
-		dataGen.addProvider(event.includeClient(), new OreItemModelProvider(packOutput, exFileHelper));
-		dataGen.addProvider(event.includeClient(), new TreeItemModelProvider(packOutput, exFileHelper));
+		generator.addProvider(event.includeClient(), new OreItemModelProvider(packOutput, fileHelper));
+		generator.addProvider(event.includeClient(), new TreeItemModelProvider(packOutput, fileHelper));
 
-		dataGen.addProvider(event.includeClient(), new OreBlockStateProvider(packOutput, exFileHelper));
-		dataGen.addProvider(event.includeClient(), new TreeBlockStateProvider(packOutput, exFileHelper));
+		generator.addProvider(event.includeClient(), new OreBlockStateProvider(packOutput, fileHelper));
+		generator.addProvider(event.includeClient(), new TreeBlockStateProvider(packOutput, fileHelper));
 		
 		// Language provider
-		dataGen.addProvider(event.includeClient(), new EnUsLanguageProvider(packOutput));
+		generator.addProvider(event.includeClient(), new EnUsLanguageProvider(packOutput));
 
 
 	}

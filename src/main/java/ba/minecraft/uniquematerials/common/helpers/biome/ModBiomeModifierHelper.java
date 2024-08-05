@@ -1,4 +1,4 @@
-package ba.minecraft.uniquematerials.common.helpers;
+package ba.minecraft.uniquematerials.common.helpers.biome;
 
 import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
 import net.minecraft.resources.ResourceKey;

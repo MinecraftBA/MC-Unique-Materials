@@ -6,6 +6,8 @@ import ba.minecraft.uniquematerials.common.blocks.OreBlocks;
 import ba.minecraft.uniquematerials.common.blocks.TreeBlocks;
 import ba.minecraft.uniquematerials.common.items.OreItems;
 import ba.minecraft.uniquematerials.common.items.TreeItems;
+import ba.minecraft.uniquematerials.common.tags.ModBlockTags;
+import ba.minecraft.uniquematerials.common.tags.ModItemTags;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -31,6 +33,9 @@ public class UniqueMaterialsMod
     
     public UniqueMaterialsMod()
     {
+    	ModBlockTags.init();
+    	ModItemTags.init();
+    	
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         // Registration of mod provided blocks.

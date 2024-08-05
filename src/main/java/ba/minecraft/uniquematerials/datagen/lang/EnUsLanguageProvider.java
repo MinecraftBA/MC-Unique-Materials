@@ -75,8 +75,8 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 		add(OreItems.TITANIUM_BLOCK.get(), "Titanium Block");
 
 		// Halite => Salt
-		add(OreItems.SAND_HALITE_ORE.get(), "Sand Halite Ore");
-		add(OreItems.RED_SAND_HALITE_ORE.get(), "Red Sand Halite Ore");
+		add(OreItems.SANDSTONE_HALITE_ORE.get(), "Sandstone Halite Ore");
+		add(OreItems.RED_SANDSTONE_HALITE_ORE.get(), "Red Sandstone Halite Ore");
 		add(OreItems.RAW_HALITE.get(), "Raw Halite");
 		add(OreItems.RAW_HALITE_BLOCK.get(), "Raw Halite Block");
 		
@@ -111,8 +111,8 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 		
 		// Black diamond
 		add(OreItems.BLACK_DIAMOND.get(), "Black Diamond"); 
-		add(OreItems.RED_SAND_BLACK_DIAMOND_ORE.get(), "Red Sand Black Diamond Ore"); 
-		add(OreItems.SAND_BLACK_DIAMOND_ORE.get(), "Sand Black Diamond Ore"); 
+		add(OreItems.RED_SANDSTONE_BLACK_DIAMOND_ORE.get(), "Red Sandstone Black Diamond Ore"); 
+		add(OreItems.SANDSTONE_BLACK_DIAMOND_ORE.get(), "Sandstone Black Diamond Ore"); 
 	}
 	
 

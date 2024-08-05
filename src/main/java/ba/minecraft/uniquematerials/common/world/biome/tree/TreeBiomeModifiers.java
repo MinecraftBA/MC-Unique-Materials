@@ -1,6 +1,6 @@
 package ba.minecraft.uniquematerials.common.world.biome.tree;
 
-import ba.minecraft.uniquematerials.common.helpers.ModBiomeModifierHelper;
+import ba.minecraft.uniquematerials.common.helpers.biome.ModBiomeModifierHelper;
 import net.minecraft.resources.ResourceKey;
 import net.minecraftforge.common.world.BiomeModifier;
 

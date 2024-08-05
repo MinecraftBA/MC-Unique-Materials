@@ -99,22 +99,17 @@ public final class TreeConfigurations {
 	public static final Supplier<TreeConfiguration> BEECH = 
 		() -> createBeechConfiguration(false, 0);
 	
-	public static final Supplier<TreeConfiguration> BEECH_BEEHIVE_002 = 
-		() -> createBeechConfiguration(false, 0.02f);
+	public static final Supplier<TreeConfiguration> BEECH_BEEHIVE_005 = 
+		() -> createBeechConfiguration(false, 0.05f);
 
 	// Mahogany
 	
 	public static final Supplier<TreeConfiguration> MAHOGANY = 
 		() -> createMahoganyConfiguration(false, 0);
 	
-	public static final Supplier<TreeConfiguration> MAHOGANY_BEEHIVE_002 = 
-		() -> createMahoganyConfiguration(false, 0.02f);
-	
 	// Sequoia
 	
 	public static final Supplier<TreeConfiguration> SEQUOIA = 
 		() -> createSequoiaConfiguration(false, 0);
-	
-	public static final Supplier<TreeConfiguration> SEQUOIA_BEEHIVE_002 = 
-		() -> createSequoiaConfiguration(false, 0.02f);
+		
 }

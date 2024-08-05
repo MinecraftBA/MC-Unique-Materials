@@ -59,10 +59,10 @@ public final class OreItems extends BaseItemRegistry {
 
 	// Halite
 			
-	public static final RegistryObject<BlockItem> SAND_HALITE_ORE = 
+	public static final RegistryObject<BlockItem> SANDSTONE_HALITE_ORE = 
 			registerBlockItem("sand_halite_ore", () -> OreBlocks.SANDSTONE_HALITE_ORE.get());
 	
-	public static final RegistryObject<BlockItem> RED_SAND_HALITE_ORE = 
+	public static final RegistryObject<BlockItem> RED_SANDSTONE_HALITE_ORE = 
 			registerBlockItem("red_sand_halite_ore", () -> OreBlocks.RED_SANDSTONE_HALITE_ORE.get());
 
 	public static final RegistryObject<Item> RAW_HALITE = 
@@ -146,10 +146,10 @@ public final class OreItems extends BaseItemRegistry {
 	public static final RegistryObject<Item> BLACK_DIAMOND =  
 			REGISTRY.register("black_diamond", () -> new GemstoneItem(true));
 
-	public static final RegistryObject<BlockItem> SAND_BLACK_DIAMOND_ORE = 
+	public static final RegistryObject<BlockItem> SANDSTONE_BLACK_DIAMOND_ORE = 
 			registerBlockItem("sand_black_diamond_ore", () -> OreBlocks.SANDSTONE_BLACK_DIAMOND_ORE.get());
 
-	public static final RegistryObject<BlockItem> RED_SAND_BLACK_DIAMOND_ORE = 
+	public static final RegistryObject<BlockItem> RED_SANDSTONE_BLACK_DIAMOND_ORE = 
 			registerBlockItem("red_sand_black_diamond_ore", () -> OreBlocks.RED_SANDSTONE_BLACK_DIAMOND_ORE.get());
 
 }
