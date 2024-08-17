@@ -8,6 +8,7 @@ import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
 import ba.minecraft.uniquematerials.common.tags.ModBlockTags;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -42,15 +43,15 @@ public final class ModBlockTagsProvider extends BlockTagsProvider {
 		.add(OreBlocks.NETHERRACK_CITRINE_ORE.get());
 
 	tag(ModBlockTags.SANDSTONE_ORE_REPLACEABLES)
-		.add(OreBlocks.SANDSTONE_BLACK_DIAMOND_ORE.get())
-		.add(OreBlocks.SANDSTONE_HALITE_ORE.get());
+		.add(Blocks.SAND)
+		.add(Blocks.SANDSTONE);
 
 	tag(ModBlockTags.RED_SANDSTONE_ORE_REPLACEABLES)
-		.add(OreBlocks.RED_SANDSTONE_BLACK_DIAMOND_ORE.get())
-		.add(OreBlocks.RED_SANDSTONE_HALITE_ORE.get());
+		.add(Blocks.RED_SAND)
+		.add(Blocks.RED_SANDSTONE);
 
 	tag(ModBlockTags.NETHERRACK_ORE_REPLACEABLES)
-		.add(OreBlocks.NETHERRACK_CITRINE_ORE.get());
+		.add(Blocks.NETHERRACK);
 
 	}
 }
