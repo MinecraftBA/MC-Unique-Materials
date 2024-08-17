@@ -17,7 +17,6 @@ public final class ModItemTags {
 	public static final TagKey<Item> BEECH_LOGS = create("beech_logs");
 	public static final TagKey<Item> MAHOGANY_LOGS = create("mahogany_logs");
 	public static final TagKey<Item> SEQUOIA_LOGS = create("sequoia_logs");
-	public static final TagKey<Item> RUBBER_LOGS = create("rubber_logs");
 
 }
 
