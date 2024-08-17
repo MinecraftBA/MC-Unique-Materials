@@ -46,7 +46,7 @@ public final class OreConfigurations {
 		() -> new OreConfiguration(BAUXITE_TARGET_LIST.get(), 4, 0.5F);
 
 	public static final Supplier<OreConfiguration> BAUXITE_LARGE = 
-		() -> new OreConfiguration(BAUXITE_TARGET_LIST.get(), 12, 0.75F);
+		() -> new OreConfiguration(BAUXITE_TARGET_LIST.get(), 12, 0.7F);
 	
 	public static final Supplier<OreConfiguration> BAUXITE_BURIED = 
 		() -> new OreConfiguration(BAUXITE_TARGET_LIST.get(), 8, 1.0F);
@@ -63,7 +63,7 @@ public final class OreConfigurations {
 		() -> new OreConfiguration(GALENA_TARGET_LIST.get(), 4, 0.5F);
 
 	public static final Supplier<OreConfiguration> GALENA_LARGE = 
-		() -> new OreConfiguration(GALENA_TARGET_LIST.get(), 12, 0.75F);
+		() -> new OreConfiguration(GALENA_TARGET_LIST.get(), 12, 0.7F);
 			
 	public static final Supplier<OreConfiguration> GALENA_BURIED = 
 		() -> new OreConfiguration(GALENA_TARGET_LIST.get(), 8, 1.0F);
@@ -81,7 +81,7 @@ public final class OreConfigurations {
 		() -> new OreConfiguration(OLIVINE_TARGET_LIST.get(), 4, 0.5F);
 
 	public static final Supplier<OreConfiguration> OLIVINE_LARGE = 
-		() -> new OreConfiguration(OLIVINE_TARGET_LIST.get(), 12, 0.75F);
+		() -> new OreConfiguration(OLIVINE_TARGET_LIST.get(), 12, 0.7F);
 			
 	public static final Supplier<OreConfiguration> OLIVINE_BURIED = 
 		() -> new OreConfiguration(OLIVINE_TARGET_LIST.get(), 8, 1.0F);
@@ -96,13 +96,13 @@ public final class OreConfigurations {
 	});
 		
 	public static final Supplier<OreConfiguration> SILVER_SMALL =  
-		() -> new OreConfiguration(SILVER_TARGET_LIST.get(), 4, 0.1F); 
+		() -> new OreConfiguration(SILVER_TARGET_LIST.get(), 4, 0.5F); 
 
 	public static final Supplier<OreConfiguration> SILVER_LARGE =  
-		() -> new OreConfiguration(SILVER_TARGET_LIST.get(), 12, 0.1F); 
+		() -> new OreConfiguration(SILVER_TARGET_LIST.get(), 12, 0.7F); 
 
 	public static final Supplier<OreConfiguration> SILVER_BURIED =  
-		() -> new OreConfiguration(SILVER_TARGET_LIST.get(), 8, 0.1F); 
+		() -> new OreConfiguration(SILVER_TARGET_LIST.get(), 8, 1.0F); 
 	
 	// Rutile
 	
@@ -117,7 +117,7 @@ public final class OreConfigurations {
 		() -> new OreConfiguration(RUTILE_TARGET_LIST.get(), 4, 0.5F);
 
 	public static final Supplier<OreConfiguration> RUTILE_LARGE = 
-		() -> new OreConfiguration(RUTILE_TARGET_LIST.get(), 12, 0.75F);
+		() -> new OreConfiguration(RUTILE_TARGET_LIST.get(), 12, 0.7F);
 		
 	public static final Supplier<OreConfiguration> RUTILE_BURIED = 
 		() -> new OreConfiguration(RUTILE_TARGET_LIST.get(), 8, 1.0F);

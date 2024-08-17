@@ -13,16 +13,16 @@ public final class TreeConfiguredFeatures {
 	}
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> BEECH = 
-        	ModConfiguredFeatureHelper.createResourceKey("beech");
+        	ModConfiguredFeatureHelper.createResourceKey("tree_beech");
         
     public static final ResourceKey<ConfiguredFeature<?, ?>> BEECH_BEES_005 = 
-    		ModConfiguredFeatureHelper.createResourceKey("beech_bees_005");
+    		ModConfiguredFeatureHelper.createResourceKey("tree_beech_bees_005");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> MAHOGANY = 
-    		ModConfiguredFeatureHelper.createResourceKey("mahogany");
+    		ModConfiguredFeatureHelper.createResourceKey("tree_mahogany");
         
     public static final ResourceKey<ConfiguredFeature<?, ?>> SEQUOIA = 
-    		ModConfiguredFeatureHelper.createResourceKey("sequoia");
+    		ModConfiguredFeatureHelper.createResourceKey("tree_sequoia");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
     	
