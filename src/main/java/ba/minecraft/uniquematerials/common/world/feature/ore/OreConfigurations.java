@@ -157,22 +157,22 @@ public final class OreConfigurations {
 	public static final Supplier<OreConfiguration> BLACK_DIAMOND_BURIED = 
 		() -> new OreConfiguration(BLACK_DIAMOND_TARGET_LIST.get(), 8, 1.0F);
 		
-		// Halite
+	// Halite
 
-		private static final Supplier<List<TargetBlockState>> HALITE_TARGET_LIST = Suppliers.memoize(() -> {
-			return ImmutableList.of(
-				OreConfiguration.target(SAND_TEST, OreBlocks.SANDSTONE_HALITE_ORE.get().defaultBlockState()),
-				OreConfiguration.target(RED_SAND_TEST, OreBlocks.RED_SANDSTONE_HALITE_ORE.get().defaultBlockState())
-			);
-		});
-		
-		public static final Supplier<OreConfiguration> HALITE_SMALL = 
-			() -> new OreConfiguration(HALITE_TARGET_LIST.get(), 4, 0.5F);
+	private static final Supplier<List<TargetBlockState>> HALITE_TARGET_LIST = Suppliers.memoize(() -> {
+		return ImmutableList.of(
+			OreConfiguration.target(SAND_TEST, OreBlocks.SANDSTONE_HALITE_ORE.get().defaultBlockState()),
+			OreConfiguration.target(RED_SAND_TEST, OreBlocks.RED_SANDSTONE_HALITE_ORE.get().defaultBlockState())
+		);
+	});
+	
+	public static final Supplier<OreConfiguration> HALITE_SMALL = 
+		() -> new OreConfiguration(HALITE_TARGET_LIST.get(), 4, 0.5F);
 
-		public static final Supplier<OreConfiguration> HALITE_LARGE = 
-			() -> new OreConfiguration(HALITE_TARGET_LIST.get(), 12, 0.7F);
+	public static final Supplier<OreConfiguration> HALITE_LARGE = 
+		() -> new OreConfiguration(HALITE_TARGET_LIST.get(), 12, 0.7F);
 
-		public static final Supplier<OreConfiguration> HALITE_BURIED = 
-			() -> new OreConfiguration(HALITE_TARGET_LIST.get(), 8, 1.0F);
+	public static final Supplier<OreConfiguration> HALITE_BURIED = 
+		() -> new OreConfiguration(HALITE_TARGET_LIST.get(), 8, 1.0F);
 
 }
