@@ -172,27 +172,27 @@ public final class OrePlacedFeatures {
         Holder<ConfiguredFeature<?, ?>> silverBuriedHolder = configuredFeaturesGetter.getOrThrow(OreConfiguredFeatures.SILVER_BURIED);
         PlacementUtils.register(context, SILVER_BURIED, silverBuriedHolder, ModPlacedFeatureHelper.createCommonTrianglePlacement(4, -64, 16));
 
-	    // Halite (placement similar to iron with recommended range 55 => 64)
+	    // Halite (placement similar to iron with recommended range 32 => 96)
 	    
         Holder<ConfiguredFeature<?, ?>> haliteSmallHolder = configuredFeaturesGetter.getOrThrow(OreConfiguredFeatures.HALITE_SMALL);
-        PlacementUtils.register(context, HALITE_SMALL, haliteSmallHolder, ModPlacedFeatureHelper.createCommonUniformPlacement(5, 55, 64));
+        PlacementUtils.register(context, HALITE_SMALL, haliteSmallHolder, ModPlacedFeatureHelper.createCommonUniformPlacement(5, 32, 96));
 
         Holder<ConfiguredFeature<?, ?>> haliteLargeHolder = configuredFeaturesGetter.getOrThrow(OreConfiguredFeatures.HALITE_LARGE);
-        PlacementUtils.register(context, HALITE_LARGE, haliteLargeHolder, ModPlacedFeatureHelper.createCommonTrianglePlacement(20, 55, 64));
+        PlacementUtils.register(context, HALITE_LARGE, haliteLargeHolder, ModPlacedFeatureHelper.createCommonTrianglePlacement(20, 32, 96));
 
         Holder<ConfiguredFeature<?, ?>> haliteBuriedHolder = configuredFeaturesGetter.getOrThrow(OreConfiguredFeatures.HALITE_BURIED);
-        PlacementUtils.register(context, HALITE_BURIED, haliteBuriedHolder, ModPlacedFeatureHelper.createCommonTrianglePlacement(10, 55, 64));
+        PlacementUtils.register(context, HALITE_BURIED, haliteBuriedHolder, ModPlacedFeatureHelper.createCommonTrianglePlacement(10, 32, 96));
         
-	    // Black diamond (placement similar to diamond with recommended range 55 => 64)
+	    // Black diamond (placement similar to diamond with recommended range 32 => 96)
 	    
         Holder<ConfiguredFeature<?, ?>> blackDiamondSmallHolder = configuredFeaturesGetter.getOrThrow(OreConfiguredFeatures.BLACK_DIAMOND_SMALL);
-        PlacementUtils.register(context, BLACK_DIAMOND_SMALL, blackDiamondSmallHolder, ModPlacedFeatureHelper.createCommonUniformPlacement(2, 0, 32));
+        PlacementUtils.register(context, BLACK_DIAMOND_SMALL, blackDiamondSmallHolder, ModPlacedFeatureHelper.createCommonUniformPlacement(2, 32, 96));
 
         Holder<ConfiguredFeature<?, ?>> blackDiamondLargeHolder = configuredFeaturesGetter.getOrThrow(OreConfiguredFeatures.BLACK_DIAMOND_LARGE);
-        PlacementUtils.register(context, BLACK_DIAMOND_LARGE, blackDiamondLargeHolder, ModPlacedFeatureHelper.createRareTrianglePlacement(8, 0, 32));
+        PlacementUtils.register(context, BLACK_DIAMOND_LARGE, blackDiamondLargeHolder, ModPlacedFeatureHelper.createRareTrianglePlacement(8, 32, 96));
 
         Holder<ConfiguredFeature<?, ?>> blackDiamondBuriedHolder = configuredFeaturesGetter.getOrThrow(OreConfiguredFeatures.BLACK_DIAMOND_BURIED);
-        PlacementUtils.register(context, BLACK_DIAMOND_BURIED, blackDiamondBuriedHolder, ModPlacedFeatureHelper.createCommonTrianglePlacement(4, 0, 32));
+        PlacementUtils.register(context, BLACK_DIAMOND_BURIED, blackDiamondBuriedHolder, ModPlacedFeatureHelper.createCommonTrianglePlacement(4, 32, 96));
         
 	    // Citrine (placement similar to quartz with recommended range 10 => 80)
 	    

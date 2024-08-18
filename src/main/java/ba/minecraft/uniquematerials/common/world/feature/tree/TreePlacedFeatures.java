@@ -34,16 +34,16 @@ public final class TreePlacedFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeaturesGetter = context.lookup(Registries.CONFIGURED_FEATURE);
  
         Holder<ConfiguredFeature<?, ?>> beechHolder = configuredFeaturesGetter.getOrThrow(TreeConfiguredFeatures.BEECH);
-        PlacementUtils.register(context, BEECH_CHECKED, beechHolder, PlacementUtils.filteredByBlockSurvival(TreeBlocks.BEECH_SAPLING.get()));
+        PlacementUtils.register(context, BEECH_CHECKED, beechHolder, ModPlacedFeatureHelper.createTreePlacement(3,  0.1f, 2, TreeBlocks.BEECH_SAPLING.get()));
 
         Holder<ConfiguredFeature<?, ?>> beechBees005Holder = configuredFeaturesGetter.getOrThrow(TreeConfiguredFeatures.BEECH_BEES_005);
-        PlacementUtils.register(context, BEECH_BEES_005, beechBees005Holder, PlacementUtils.filteredByBlockSurvival(TreeBlocks.BEECH_SAPLING.get()));
+        PlacementUtils.register(context, BEECH_BEES_005, beechBees005Holder, ModPlacedFeatureHelper.createTreePlacement(0,  0.1f, 1, TreeBlocks.BEECH_SAPLING.get()));
 
         Holder<ConfiguredFeature<?, ?>> mahoganyHolder = configuredFeaturesGetter.getOrThrow(TreeConfiguredFeatures.MAHOGANY);
-        PlacementUtils.register(context, MAHOGANY_CHECKED, mahoganyHolder, PlacementUtils.filteredByBlockSurvival(TreeBlocks.MAHOGANY_SAPLING.get()));
+        PlacementUtils.register(context, MAHOGANY_CHECKED, mahoganyHolder, ModPlacedFeatureHelper.createTreePlacement(3,  0.1f, 2, TreeBlocks.MAHOGANY_SAPLING.get()));
 
         Holder<ConfiguredFeature<?, ?>> sequoiaHolder = configuredFeaturesGetter.getOrThrow(TreeConfiguredFeatures.SEQUOIA);
-        PlacementUtils.register(context, SEQUOIA_CHECKED, sequoiaHolder, PlacementUtils.filteredByBlockSurvival(TreeBlocks.SEQUOIA_SAPLING.get()));
+        PlacementUtils.register(context, SEQUOIA_CHECKED, sequoiaHolder, ModPlacedFeatureHelper.createTreePlacement(3,  0.1f, 2, TreeBlocks.SEQUOIA_SAPLING.get()));
 
     }
 

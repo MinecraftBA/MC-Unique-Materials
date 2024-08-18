@@ -4,8 +4,11 @@ import java.util.List;
 
 import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.CountPlacement;
@@ -41,6 +44,23 @@ public final class ModPlacedFeatureHelper {
 
     private static List<PlacementModifier> orePlacement(PlacementModifier countPlacementModifier, PlacementModifier heightRangeModifier) {
         return List.of(countPlacementModifier, InSquarePlacement.spread(), heightRangeModifier, BiomeFilter.biome());
+    }
+    
+    public static List<PlacementModifier> createTreePlacement(int baseCount, float extraChance, int extraCount, Block sapplingBlock) {
+    	
+    	// baseCount
+    	// This is the base number of times the feature will attempt to generate in each chunk. 
+    	// This number is guaranteed, meaning that if you set this to 1, the feature will try to generate at least once in every chunk.
+
+    	// extraChance
+    	// This is the probability (expressed as a float between 0.0 and 1.0) that an additional extraCount number of features will be generated in the chunk. 
+    	// This chance is evaluated for each chunk independently.
+    	
+    	// extraCount
+    	// This is the number of additional instances of the feature that will be generated if the extraChance condition is met. 
+    	// If the random chance (determined by extraChance) succeeds, this many additional instances will be attempted in the chunk.
+    	
+    	return VegetationPlacements.treePlacement(PlacementUtils.countExtra(baseCount, extraChance, extraCount), sapplingBlock);
     }
 
 }
