@@ -9,10 +9,9 @@ import ba.minecraft.uniquematerials.datagen.tag.ModItemTagsProvider;
 import ba.minecraft.uniquematerials.datagen.recipe.ModRecipeProvider;
 import ba.minecraft.uniquematerials.datagen.blockstate.OreBlockStateProvider;
 import ba.minecraft.uniquematerials.datagen.blockstate.TreeBlockStateProvider;
-import ba.minecraft.uniquematerials.datagen.model.item.OreItemModelProvider;
-import ba.minecraft.uniquematerials.datagen.model.item.TreeItemModelProvider;
 import ba.minecraft.uniquematerials.datagen.lang.EnUsLanguageProvider;
 import ba.minecraft.uniquematerials.datagen.loot.ModLootTableProvider;
+import ba.minecraft.uniquematerials.datagen.model.ModItemModelProvider;
 import net.minecraft.Util;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.DataGenerator;
@@ -57,8 +56,7 @@ public final class ModDataGenerators {
         generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, provider, modBlockTagsProvider.contentsGetter(), fileHelper));
 		
 		// Item model providers
-		generator.addProvider(event.includeClient(), new OreItemModelProvider(packOutput, fileHelper));
-		generator.addProvider(event.includeClient(), new TreeItemModelProvider(packOutput, fileHelper));
+		generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, fileHelper));
 
 		generator.addProvider(event.includeClient(), new OreBlockStateProvider(packOutput, fileHelper));
 		generator.addProvider(event.includeClient(), new TreeBlockStateProvider(packOutput, fileHelper));
