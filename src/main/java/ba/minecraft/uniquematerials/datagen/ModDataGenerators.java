@@ -7,8 +7,7 @@ import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
 import ba.minecraft.uniquematerials.datagen.tag.ModBlockTagsProvider;
 import ba.minecraft.uniquematerials.datagen.tag.ModItemTagsProvider;
 import ba.minecraft.uniquematerials.datagen.recipe.ModRecipeProvider;
-import ba.minecraft.uniquematerials.datagen.blockstate.OreBlockStateProvider;
-import ba.minecraft.uniquematerials.datagen.blockstate.TreeBlockStateProvider;
+import ba.minecraft.uniquematerials.datagen.blockstate.ModBlockStateProvider;
 import ba.minecraft.uniquematerials.datagen.lang.EnUsLanguageProvider;
 import ba.minecraft.uniquematerials.datagen.loot.ModLootTableProvider;
 import ba.minecraft.uniquematerials.datagen.model.ModItemModelProvider;
@@ -58,8 +57,7 @@ public final class ModDataGenerators {
 		// Item model providers
 		generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, fileHelper));
 
-		generator.addProvider(event.includeClient(), new OreBlockStateProvider(packOutput, fileHelper));
-		generator.addProvider(event.includeClient(), new TreeBlockStateProvider(packOutput, fileHelper));
+		generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, fileHelper));
 		
 		// Language provider
 		generator.addProvider(event.includeClient(), new EnUsLanguageProvider(packOutput));
