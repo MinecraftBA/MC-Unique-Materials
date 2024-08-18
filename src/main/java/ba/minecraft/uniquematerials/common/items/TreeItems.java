@@ -14,6 +14,8 @@ import net.minecraftforge.registries.RegistryObject;
 
 public final class TreeItems {
 
+	private TreeItems() {}
+
 	public static final DeferredRegister<Item> REGISTRY = 
 			DeferredRegister.create(ForgeRegistries.ITEMS, UniqueMaterialsMod.MODID);
 
@@ -25,8 +27,6 @@ public final class TreeItems {
 			return new BlockItem(supplier.get(), properties);
 		});
 	}
-	
-	private TreeItems() {}
 	
 	// Beech items
 	

@@ -18,6 +18,8 @@ import net.minecraftforge.registries.RegistryObject;
 
 public final class OreItems {
 
+	private OreItems() {}
+
 	public static final DeferredRegister<Item> REGISTRY = 
 			DeferredRegister.create(ForgeRegistries.ITEMS, UniqueMaterialsMod.MODID);
 
@@ -29,8 +31,6 @@ public final class OreItems {
 			return new BlockItem(supplier.get(), properties);
 		});
 	}
-	
-	private OreItems() {}
 
 	// Rutile -> Titanium
 
