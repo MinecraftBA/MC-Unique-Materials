@@ -53,11 +53,12 @@ public final class ModDataGenerators {
 
         // Registration of item tags providers.
         generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, provider, modBlockTagsProvider.contentsGetter(), fileHelper));
-		
+
+        // Blockstate providers
+		generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, fileHelper));
+
 		// Item model providers
 		generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, fileHelper));
-
-		generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, fileHelper));
 		
 		// Language provider
 		generator.addProvider(event.includeClient(), new EnUsLanguageProvider(packOutput));
