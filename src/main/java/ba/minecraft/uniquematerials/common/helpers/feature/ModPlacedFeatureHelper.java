@@ -60,6 +60,9 @@ public final class ModPlacedFeatureHelper {
     	// This is the number of additional instances of the feature that will be generated if the extraChance condition is met. 
     	// If the random chance (determined by extraChance) succeeds, this many additional instances will be attempted in the chunk.
     	
+    	// sapplingBlock
+    	// Sapling block is passed to ensure that tree can survive on the terrain where is it about to be generated.
+    	
     	return VegetationPlacements.treePlacement(PlacementUtils.countExtra(baseCount, extraChance, extraCount), sapplingBlock);
     }
 
