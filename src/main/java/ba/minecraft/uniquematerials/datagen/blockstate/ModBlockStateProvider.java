@@ -7,9 +7,11 @@ import ba.minecraft.uniquematerials.common.blocks.tree.TreeLeavesBlock;
 import ba.minecraft.uniquematerials.common.blocks.tree.TreeSaplingBlock;
 import ba.minecraft.uniquematerials.common.blocks.tree.WoodBlock;
 import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
+import ba.minecraft.uniquematerials.common.helpers.resource.ModResourceHelper;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -93,6 +95,7 @@ public final class ModBlockStateProvider extends BlockStateProvider {
 
 		// Aventurine
 		simpleBlock(OreBlocks.NETHERRACK_AVENTURINE_ORE.get());
+		cubeColumnBlock(OreBlocks.AVENTURINE_BLOCK.get());
 
 		// Galena => Lead
 		simpleBlock(OreBlocks.GALENA_ORE.get());
@@ -105,30 +108,41 @@ public final class ModBlockStateProvider extends BlockStateProvider {
 	}
 	
 	private void woodBlock(WoodBlock woodBlock, LogBlock logBlock) {
-		String logBlockPath = ForgeRegistries.BLOCKS.getKey(logBlock).getPath();
-		ResourceLocation logBlockLocation = ResourceLocation.fromNamespaceAndPath(UniqueMaterialsMod.MODID, "block/" + logBlockPath);
+		String logRegistryName = registryName(logBlock);
+		ResourceLocation logBlockLocation = ModResourceHelper.create("block/" + logRegistryName);
 		axisBlock(woodBlock, logBlockLocation, logBlockLocation);
 	}
 
 	private void leavesBlock(TreeLeavesBlock block) {
-		String path = ForgeRegistries.BLOCKS.getKey(block).getPath();
-		ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(UniqueMaterialsMod.MODID, "block/" + path);
+		String registryName = registryName(block);
+		ResourceLocation texture = ModResourceHelper.create("block/" + registryName);
 		ResourceLocation parent = ResourceLocation.withDefaultNamespace("block/leaves");
 
 		BlockModelBuilder modelBuilder = models()
-				.singleTexture(path, parent, "all", texture)
+				.singleTexture(registryName, parent, "all", texture)
 				.renderType(cutout());
 		
 		simpleBlock(block, modelBuilder);
 	}
 
 	private void saplingBlock(TreeSaplingBlock block) {
-		String path = ForgeRegistries.BLOCKS.getKey(block).getPath();
-		ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(UniqueMaterialsMod.MODID, "block/" + path);
+		String path = registryName(block);
+		ResourceLocation texture =  ModResourceHelper.create("block/" + path);
 		
 		BlockModelBuilder modelBuilder = models()
 				.cross(path, texture)
 				.renderType(cutout());
+		
+		simpleBlock(block, modelBuilder);
+	}
+	
+	private void cubeColumnBlock(Block block) {
+		String registryName = registryName(block);
+		ResourceLocation sideTextureLocation = ModResourceHelper.create("block/" + registryName + "_side");
+		ResourceLocation endTextureLocation = ModResourceHelper.create("block/" + registryName + "_top");
+
+		BlockModelBuilder modelBuilder = models()
+				.cubeColumn(registryName, sideTextureLocation, endTextureLocation);
 		
 		simpleBlock(block, modelBuilder);
 	}
@@ -140,6 +154,10 @@ public final class ModBlockStateProvider extends BlockStateProvider {
 		return renderTypeName;
 	}
 	
+    private String registryName(Block block) {
+        return ForgeRegistries.BLOCKS.getKey(block).getPath();
+    }
+    
 	private String cutout() {
 		return getRenderTypeName(RenderType.cutout());
 	}

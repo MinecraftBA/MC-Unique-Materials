@@ -7,6 +7,7 @@ import ba.minecraft.uniquematerials.common.blocks.ore.SilverBlock;
 import ba.minecraft.uniquematerials.common.blocks.ore.TitaniumBlock;
 import ba.minecraft.uniquematerials.common.blocks.ore.base.DeepslateFoundOreBlock;
 import ba.minecraft.uniquematerials.common.blocks.ore.base.NetherrackFoundOreBlock;
+import ba.minecraft.uniquematerials.common.blocks.ore.base.QuartzVariantBlock;
 import ba.minecraft.uniquematerials.common.blocks.ore.base.RawOreBlock;
 import ba.minecraft.uniquematerials.common.blocks.ore.base.SandstoneFoundOreBlock;
 import ba.minecraft.uniquematerials.common.blocks.ore.base.StoneFoundOreBlock;
@@ -102,6 +103,9 @@ public final class OreBlocks {
 
 	public static final RegistryObject<DropExperienceBlock> NETHERRACK_AVENTURINE_ORE = 
 			REGISTRY.register("netherrack_aventurine_ore", () -> new NetherrackFoundOreBlock(UniformInt.of(3, 7))); 
+
+	public static final RegistryObject<QuartzVariantBlock> AVENTURINE_BLOCK = 
+			REGISTRY.register("aventurine_block", () -> new QuartzVariantBlock(MapColor.COLOR_GREEN)); 
 
 	// Galena => Lead
 	

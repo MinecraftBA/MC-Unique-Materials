@@ -76,6 +76,7 @@ public final class ModItemModelProvider extends ItemModelProvider {
 		
 		generated(OreItems.AVENTURINE.get());
 		blockItem(OreItems.NETHERRACK_AVENTURINE_ORE.get());
+		blockItem(OreItems.AVENTURINE_BLOCK.get());
 
 		// Galena == lead
 		

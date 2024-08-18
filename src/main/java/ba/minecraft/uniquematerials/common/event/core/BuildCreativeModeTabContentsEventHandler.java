@@ -84,6 +84,9 @@ public final class BuildCreativeModeTabContentsEventHandler {
 			event.accept(OreItems.SILVER_BLOCK);
 			event.accept(OreItems.TITANIUM_BLOCK);
 
+			// Quartz variants
+			event.accept(OreItems.AVENTURINE_BLOCK);
+
 			// Logs (available as both natural and building blocks)
 			event.accept(TreeItems.BEECH_LOG);
 			event.accept(TreeItems.MAHOGANY_LOG);

@@ -147,6 +147,9 @@ public final class OreItems {
 	public static final RegistryObject<BlockItem> NETHERRACK_AVENTURINE_ORE = 
 			registerBlockItem("netherrack_aventurine_ore", () -> OreBlocks.NETHERRACK_AVENTURINE_ORE.get());
 
+	public static final RegistryObject<BlockItem> AVENTURINE_BLOCK = 
+			registerBlockItem("aventurine_block", () -> OreBlocks.AVENTURINE_BLOCK.get());
+
 	// Galena ore -> Lead
 	
 	public static final RegistryObject<Item> RAW_GALENA =  

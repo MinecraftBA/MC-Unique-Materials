@@ -104,6 +104,7 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 		// Aventurine
 		add(OreItems.AVENTURINE.get(), "Aventurine"); 
 		add(OreItems.NETHERRACK_AVENTURINE_ORE.get(), "Netherrack Aventurine Ore");
+		add(OreItems.AVENTURINE_BLOCK.get(), "Block of Aventurine"); 
 
 		// Galena -> Lead
 		add(OreItems.GALENA_ORE.get(), "Galena Ore");

@@ -94,6 +94,8 @@ public final class OreBlockLootSubProvider extends BlockLootSubProvider {
 		add(OreBlocks.NETHERRACK_AVENTURINE_ORE.get(), (oreBlock) -> {
 	    	return createOreDrop(oreBlock, OreItems.AVENTURINE.get());
 		});
+		
+		dropSelf(OreBlocks.AVENTURINE_BLOCK.get());
 
 		// Galena => Lead
 		
