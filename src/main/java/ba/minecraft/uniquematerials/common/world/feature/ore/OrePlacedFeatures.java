@@ -23,6 +23,17 @@ public final class OrePlacedFeatures {
     public static final ResourceKey<PlacedFeature> RUTILE_BURIED = 
     		ModPlacedFeatureHelper.createResourceKey("ore_rutile_buried");
 
+	// Olivine
+	
+    public static final ResourceKey<PlacedFeature> OLIVINE_SMALL = 
+    		ModPlacedFeatureHelper.createResourceKey("ore_olivine_small");
+
+    public static final ResourceKey<PlacedFeature> OLIVINE_LARGE = 
+    		ModPlacedFeatureHelper.createResourceKey("ore_olivine_large");
+
+    public static final ResourceKey<PlacedFeature> OLIVINE_BURIED = 
+    		ModPlacedFeatureHelper.createResourceKey("ore_olivine_buried");
+
 	// Bauxite
 	
     public static final ResourceKey<PlacedFeature> BAUXITE_SMALL = 
@@ -116,6 +127,17 @@ public final class OrePlacedFeatures {
 
         Holder<ConfiguredFeature<?, ?>> rutileBuriedHolder = configuredFeaturesGetter.getOrThrow(OreConfiguredFeatures.RUTILE_BURIED);
         PlacementUtils.register(context, RUTILE_BURIED, rutileBuriedHolder, ModPlacedFeatureHelper.createCommonTrianglePlacement(4, 0, 32));
+
+	    // Olivine (placement similar to iron with recommended range -24 => 16)
+	    
+        Holder<ConfiguredFeature<?, ?>> olivineSmallHolder = configuredFeaturesGetter.getOrThrow(OreConfiguredFeatures.OLIVINE_SMALL);
+        PlacementUtils.register(context, OLIVINE_SMALL, olivineSmallHolder, ModPlacedFeatureHelper.createCommonUniformPlacement(5, -24, 16));
+
+        Holder<ConfiguredFeature<?, ?>> olivineLargeHolder = configuredFeaturesGetter.getOrThrow(OreConfiguredFeatures.OLIVINE_LARGE);
+        PlacementUtils.register(context, OLIVINE_LARGE, olivineLargeHolder, ModPlacedFeatureHelper.createCommonTrianglePlacement(20, -24, 16));
+
+        Holder<ConfiguredFeature<?, ?>> olivineBuriedHolder = configuredFeaturesGetter.getOrThrow(OreConfiguredFeatures.OLIVINE_BURIED);
+        PlacementUtils.register(context, OLIVINE_BURIED, olivineBuriedHolder, ModPlacedFeatureHelper.createCommonTrianglePlacement(10, -24, 16));
         
 	    // Bauxite (placement similar to iron with recommended range 40 => 70)
 	    
