@@ -6,8 +6,7 @@ import ba.minecraft.uniquematerials.common.core.ModRegistries;
 import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
 import ba.minecraft.uniquematerials.datagen.tag.ModBlockTagsProvider;
 import ba.minecraft.uniquematerials.datagen.tag.ModItemTagsProvider;
-import ba.minecraft.uniquematerials.datagen.recipe.OreItemRecipeProvider;
-import ba.minecraft.uniquematerials.datagen.recipe.TreeItemRecipeProvider;
+import ba.minecraft.uniquematerials.datagen.recipe.ModRecipeProvider;
 import ba.minecraft.uniquematerials.datagen.blockstate.OreBlockStateProvider;
 import ba.minecraft.uniquematerials.datagen.blockstate.TreeBlockStateProvider;
 import ba.minecraft.uniquematerials.datagen.model.item.OreItemModelProvider;
@@ -43,8 +42,7 @@ public final class ModDataGenerators {
         CompletableFuture<Provider> provider = CompletableFuture.supplyAsync(ModRegistries::createLookup, Util.backgroundExecutor());
 
         // Registration of recipe providers.
-        generator.addProvider(event.includeServer(), new OreItemRecipeProvider(packOutput, provider));
-        generator.addProvider(event.includeServer(), new TreeItemRecipeProvider(packOutput, provider));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, provider));
         
         // Registration of loot table.
         generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput, provider));
