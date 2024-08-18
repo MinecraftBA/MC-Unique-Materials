@@ -1,12 +1,31 @@
 package ba.minecraft.uniquematerials.common.items;
 
+import java.util.function.Supplier;
+
 import ba.minecraft.uniquematerials.common.blocks.TreeBlocks;
-import ba.minecraft.uniquematerials.common.items.base.BaseItemRegistry;
+import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Item.Properties;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public final class TreeItems extends BaseItemRegistry {
+public final class TreeItems {
 
+	public static final DeferredRegister<Item> REGISTRY = 
+			DeferredRegister.create(ForgeRegistries.ITEMS, UniqueMaterialsMod.MODID);
+
+	protected static RegistryObject<BlockItem> registerBlockItem(String name, Supplier<Block> supplier) {
+		return REGISTRY.register(name, () -> 
+		{ 
+			Properties properties = new Properties();
+			properties.stacksTo(Item.DEFAULT_MAX_STACK_SIZE);
+			return new BlockItem(supplier.get(), properties);
+		});
+	}
+	
 	private TreeItems() {}
 	
 	// Beech items
