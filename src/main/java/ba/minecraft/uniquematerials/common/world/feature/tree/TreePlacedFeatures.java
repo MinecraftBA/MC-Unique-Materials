@@ -12,7 +12,7 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public final class TreePlacedFeatures {
-
+	
     public static final ResourceKey<PlacedFeature> BEECH_CHECKED = 
     		ModPlacedFeatureHelper.createResourceKey("tree_beech_checked");
 

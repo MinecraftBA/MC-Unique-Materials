@@ -97,7 +97,12 @@ public final class OreBlocks {
 
 	public static final RegistryObject<DropExperienceBlock> NETHERRACK_CITRINE_ORE = 
 			REGISTRY.register("netherrack_citrine_ore", () -> new NetherrackFoundOreBlock(UniformInt.of(3, 7))); 
-	
+
+	// Aventurine
+
+	public static final RegistryObject<DropExperienceBlock> NETHERRACK_AVENTURINE_ORE = 
+			REGISTRY.register("netherrack_aventurine_ore", () -> new NetherrackFoundOreBlock(UniformInt.of(3, 7))); 
+
 	// Galena => Lead
 	
 	public static final RegistryObject<DropExperienceBlock> GALENA_ORE = 

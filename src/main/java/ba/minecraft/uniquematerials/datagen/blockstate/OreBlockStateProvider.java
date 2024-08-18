@@ -45,7 +45,10 @@ public final class OreBlockStateProvider extends BaseBlockStateProvider {
 		
 		// Citrine
 		simpleBlock(OreBlocks.NETHERRACK_CITRINE_ORE.get());
-		
+
+		// Aventurine
+		simpleBlock(OreBlocks.NETHERRACK_AVENTURINE_ORE.get());
+
 		// Galena => Lead
 		simpleBlock(OreBlocks.GALENA_ORE.get());
 		simpleBlock(OreBlocks.RAW_GALENA_BLOCK.get());

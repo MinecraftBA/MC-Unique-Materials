@@ -53,6 +53,7 @@ public final class MinecraftBlockTagsProvider extends BlockTagsProvider {
 		.add(OreBlocks.DEEPSLATE_RUTILE_ORE.get())
 		.add(OreBlocks.DEEPSLATE_SILVER_ORE.get())
 		.add(OreBlocks.NETHERRACK_CITRINE_ORE.get())
+		.add(OreBlocks.NETHERRACK_AVENTURINE_ORE.get())
 		.add(OreBlocks.RAW_BAUXITE_BLOCK.get())
 		.add(OreBlocks.RAW_GALENA_BLOCK.get())
 		.add(OreBlocks.RAW_HALITE_BLOCK.get())

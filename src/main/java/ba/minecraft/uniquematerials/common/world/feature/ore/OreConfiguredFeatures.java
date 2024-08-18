@@ -69,14 +69,25 @@ public final class OreConfiguredFeatures {
 
 	// Citrine
 
-	public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_CITRINE_SMALL = ModConfiguredFeatureHelper
+	public static final ResourceKey<ConfiguredFeature<?, ?>> CITRINE_NETHER_SMALL = ModConfiguredFeatureHelper
 			.createResourceKey("ore_citrine_nether_small");
 
-	public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_CITRINE_LARGE = ModConfiguredFeatureHelper
+	public static final ResourceKey<ConfiguredFeature<?, ?>> CITRINE_NETHER_LARGE = ModConfiguredFeatureHelper
 			.createResourceKey("ore_citrine_nether_large");
 
-	public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_CITRINE_BURIED = ModConfiguredFeatureHelper
+	public static final ResourceKey<ConfiguredFeature<?, ?>> CITRINE_NETHER_BURIED = ModConfiguredFeatureHelper
 			.createResourceKey("ore_citrine_nether_buried");
+
+	// Aventurine
+
+	public static final ResourceKey<ConfiguredFeature<?, ?>> AVENTURINE_NETHER_SMALL = ModConfiguredFeatureHelper
+			.createResourceKey("ore_aventurine_nether_small");
+
+	public static final ResourceKey<ConfiguredFeature<?, ?>> AVENTURINE_NETHER_LARGE = ModConfiguredFeatureHelper
+			.createResourceKey("ore_aventurine_nether_large");
+
+	public static final ResourceKey<ConfiguredFeature<?, ?>> AVENTURINE_NETHER_BURIED = ModConfiguredFeatureHelper
+			.createResourceKey("ore_aventurine_nether_buried");
 
 	// Galena
 
@@ -128,9 +139,14 @@ public final class OreConfiguredFeatures {
 		FeatureUtils.register(context, HALITE_BURIED, Feature.ORE, OreConfigurations.HALITE_BURIED.get());
 
 		// Citrine
-		FeatureUtils.register(context, NETHER_CITRINE_SMALL, Feature.ORE, OreConfigurations.NETHER_CITRINE_SMALL.get());
-		FeatureUtils.register(context, NETHER_CITRINE_LARGE, Feature.ORE, OreConfigurations.NETHER_CITRINE_LARGE.get());
-		FeatureUtils.register(context, NETHER_CITRINE_BURIED, Feature.ORE, OreConfigurations.NETHER_CITRINE_BURIED.get());
+		FeatureUtils.register(context, CITRINE_NETHER_SMALL, Feature.ORE, OreConfigurations.CITRINE_NETHER_SMALL.get());
+		FeatureUtils.register(context, CITRINE_NETHER_LARGE, Feature.ORE, OreConfigurations.CITRINE_NETHER_LARGE.get());
+		FeatureUtils.register(context, CITRINE_NETHER_BURIED, Feature.ORE, OreConfigurations.CITRINE_NETHER_BURIED.get());
+
+		// Aventurine
+		FeatureUtils.register(context, AVENTURINE_NETHER_SMALL, Feature.ORE, OreConfigurations.AVENTURINE_NETHER_SMALL.get());
+		FeatureUtils.register(context, AVENTURINE_NETHER_LARGE, Feature.ORE, OreConfigurations.AVENTURINE_NETHER_LARGE.get());
+		FeatureUtils.register(context, AVENTURINE_NETHER_BURIED, Feature.ORE, OreConfigurations.AVENTURINE_NETHER_BURIED.get());
 
 		// Galena
 		FeatureUtils.register(context, GALENA_SMALL, Feature.ORE, OreConfigurations.GALENA_SMALL.get());

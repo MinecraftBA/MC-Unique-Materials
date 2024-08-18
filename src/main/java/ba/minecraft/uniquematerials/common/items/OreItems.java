@@ -120,7 +120,15 @@ public final class OreItems extends BaseItemRegistry {
 	
 	public static final RegistryObject<BlockItem> NETHERRACK_CITRINE_ORE = 
 			registerBlockItem("netherrack_citrine_ore", () -> OreBlocks.NETHERRACK_CITRINE_ORE.get());
+
+	// Aventurine Ore -> Aventurine Crystal
+
+	public static final RegistryObject<Item> AVENTURINE =  
+			REGISTRY.register("aventurine", () -> new GemstoneItem(false));
 	
+	public static final RegistryObject<BlockItem> NETHERRACK_AVENTURINE_ORE = 
+			registerBlockItem("netherrack_aventurine_ore", () -> OreBlocks.NETHERRACK_AVENTURINE_ORE.get());
+
 	// Galena ore -> Lead
 	
 	public static final RegistryObject<Item> RAW_GALENA =  

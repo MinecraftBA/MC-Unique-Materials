@@ -2,7 +2,6 @@ package ba.minecraft.uniquematerials.datagen.tag.block;
 
 import java.util.concurrent.CompletableFuture;
 
-import ba.minecraft.uniquematerials.common.blocks.OreBlocks;
 import ba.minecraft.uniquematerials.common.blocks.TreeBlocks;
 import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
 import ba.minecraft.uniquematerials.common.tags.ModBlockTags;
@@ -39,9 +38,6 @@ public final class ModBlockTagsProvider extends BlockTagsProvider {
 		.add(TreeBlocks.SEQUOIA_WOOD.get())
 		.add(TreeBlocks.STRIPPED_SEQUOIA_WOOD.get());
 		
-	tag(ModBlockTags.NEEDS_NETHERITE_TOOL)
-		.add(OreBlocks.NETHERRACK_CITRINE_ORE.get());
-
 	tag(ModBlockTags.SANDSTONE_ORE_REPLACEABLES)
 		.add(Blocks.SAND)
 		.add(Blocks.SANDSTONE);

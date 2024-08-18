@@ -57,7 +57,12 @@ public final class OreItemModelProvider extends BaseItemModelProvider {
 		
 		generated(OreItems.CITRINE.get());
 		blockItem(OreItems.NETHERRACK_CITRINE_ORE.get());
+
+		// Aventurine
 		
+		generated(OreItems.AVENTURINE.get());
+		blockItem(OreItems.NETHERRACK_AVENTURINE_ORE.get());
+
 		// Galena == lead
 		
 		blockItem(OreItems.GALENA_ORE.get());

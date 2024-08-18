@@ -124,21 +124,38 @@ public final class OreConfigurations {
 	
 	// Nether Citrine
 	
-	private static final Supplier<List<TargetBlockState>> NETHER_CITRINE_TARGET_LIST = Suppliers.memoize(() -> {
+	private static final Supplier<List<TargetBlockState>> CITRINE_NETHER_TARGET_LIST = Suppliers.memoize(() -> {
 		return ImmutableList.of(
 			OreConfiguration.target(NETHERRACK_TEST, OreBlocks.NETHERRACK_CITRINE_ORE.get().defaultBlockState())
 		);
 	});
 		
-	public static final Supplier<OreConfiguration> NETHER_CITRINE_SMALL = 
-		() -> new OreConfiguration(NETHER_CITRINE_TARGET_LIST.get(), 4, 0.5F);
+	public static final Supplier<OreConfiguration> CITRINE_NETHER_SMALL = 
+		() -> new OreConfiguration(CITRINE_NETHER_TARGET_LIST.get(), 4, 0.5F);
 
-	public static final Supplier<OreConfiguration> NETHER_CITRINE_LARGE = 
-		() -> new OreConfiguration(NETHER_CITRINE_TARGET_LIST.get(), 12, 0.7F);
+	public static final Supplier<OreConfiguration> CITRINE_NETHER_LARGE = 
+		() -> new OreConfiguration(CITRINE_NETHER_TARGET_LIST.get(), 12, 0.7F);
 
-	public static final Supplier<OreConfiguration> NETHER_CITRINE_BURIED = 
-		() -> new OreConfiguration(NETHER_CITRINE_TARGET_LIST.get(), 8, 1.0F);
+	public static final Supplier<OreConfiguration> CITRINE_NETHER_BURIED = 
+		() -> new OreConfiguration(CITRINE_NETHER_TARGET_LIST.get(), 8, 1.0F);
+
+	// Nether Aventurine
+	
+	private static final Supplier<List<TargetBlockState>> AVENTURINE_NETHER_TARGET_LIST = Suppliers.memoize(() -> {
+		return ImmutableList.of(
+			OreConfiguration.target(NETHERRACK_TEST, OreBlocks.NETHERRACK_AVENTURINE_ORE.get().defaultBlockState())
+		);
+	});
 		
+	public static final Supplier<OreConfiguration> AVENTURINE_NETHER_SMALL = 
+		() -> new OreConfiguration(AVENTURINE_NETHER_TARGET_LIST.get(), 4, 0.5F);
+
+	public static final Supplier<OreConfiguration> AVENTURINE_NETHER_LARGE = 
+		() -> new OreConfiguration(AVENTURINE_NETHER_TARGET_LIST.get(), 12, 0.7F);
+
+	public static final Supplier<OreConfiguration> AVENTURINE_NETHER_BURIED = 
+		() -> new OreConfiguration(AVENTURINE_NETHER_TARGET_LIST.get(), 8, 1.0F);
+
 	// Black Diamond
 
 	private static final Supplier<List<TargetBlockState>> BLACK_DIAMOND_TARGET_LIST = Suppliers.memoize(() -> {

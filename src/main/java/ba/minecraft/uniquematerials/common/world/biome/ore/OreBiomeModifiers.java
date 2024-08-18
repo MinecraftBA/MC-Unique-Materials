@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ForgeBiomeModifiers;
 
@@ -67,7 +68,7 @@ public final class OreBiomeModifiers {
 
         context.register(ADD_RUTILE_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
         		biomesGetter.getOrThrow(BiomeTags.IS_OVERWORLD),
-                HolderSet.direct(placedFeaturesGetter.getOrThrow(OrePlacedFeatures.AZURITE_ORE_PLACED_KEY)),
+                HolderSet.direct(placedFeaturesGetter.getOrThrow(OrePlacedFeatures.RUTILE_BURIED)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
     	
     }

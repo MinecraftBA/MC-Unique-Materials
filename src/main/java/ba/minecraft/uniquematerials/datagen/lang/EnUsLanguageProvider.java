@@ -99,8 +99,12 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 		
 		// Citrine
 		add(OreItems.CITRINE.get(), "Citrine"); 
-		add(OreItems.NETHERRACK_CITRINE_ORE.get(), "Nether Citrine Ore");
+		add(OreItems.NETHERRACK_CITRINE_ORE.get(), "Netherrack Citrine Ore");
 		
+		// Aventurine
+		add(OreItems.AVENTURINE.get(), "Aventurine"); 
+		add(OreItems.NETHERRACK_AVENTURINE_ORE.get(), "Netherrack Aventurine Ore");
+
 		// Galena -> Lead
 		add(OreItems.GALENA_ORE.get(), "Galena Ore");
 		add(OreItems.RAW_GALENA.get(), "Raw Galena");
