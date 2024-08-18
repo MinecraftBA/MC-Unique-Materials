@@ -4,12 +4,8 @@ import java.util.concurrent.CompletableFuture;
 
 import ba.minecraft.uniquematerials.common.core.ModRegistries;
 import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
-import ba.minecraft.uniquematerials.datagen.tag.block.ForgeBlockTagsProvider;
-import ba.minecraft.uniquematerials.datagen.tag.block.MinecraftBlockTagsProvider;
-import ba.minecraft.uniquematerials.datagen.tag.block.ModBlockTagsProvider;
-import ba.minecraft.uniquematerials.datagen.tag.item.ForgeItemTagsProvider;
-import ba.minecraft.uniquematerials.datagen.tag.item.MinecraftItemTagsProvider;
-import ba.minecraft.uniquematerials.datagen.tag.item.ModItemTagsProvider;
+import ba.minecraft.uniquematerials.datagen.tag.ModBlockTagsProvider;
+import ba.minecraft.uniquematerials.datagen.tag.ModItemTagsProvider;
 import ba.minecraft.uniquematerials.datagen.recipe.OreItemRecipeProvider;
 import ba.minecraft.uniquematerials.datagen.recipe.TreeItemRecipeProvider;
 import ba.minecraft.uniquematerials.datagen.blockstate.OreBlockStateProvider;
@@ -55,20 +51,11 @@ public final class ModDataGenerators {
 
 		// Registration of mod features.
 		generator.addProvider(event.includeServer(), new ModDatapackBuiltinEntriesProvider(packOutput, provider));
-
-		// Registration of block tags providers.
-		MinecraftBlockTagsProvider minecraftBlockTagsProvider = new MinecraftBlockTagsProvider(packOutput, provider, fileHelper);
-        generator.addProvider(event.includeServer(), minecraftBlockTagsProvider);
-
-        ForgeBlockTagsProvider forgeBlockTagsProvider = new ForgeBlockTagsProvider(packOutput, provider, fileHelper);
-        generator.addProvider(event.includeServer(), forgeBlockTagsProvider);
 		
         ModBlockTagsProvider modBlockTagsProvider = new ModBlockTagsProvider(packOutput, provider, fileHelper);
         generator.addProvider(event.includeServer(), modBlockTagsProvider);
 
         // Registration of item tags providers.
-        generator.addProvider(event.includeServer(), new MinecraftItemTagsProvider(packOutput, provider, minecraftBlockTagsProvider.contentsGetter(), fileHelper));
-        generator.addProvider(event.includeServer(), new ForgeItemTagsProvider(packOutput, provider, forgeBlockTagsProvider.contentsGetter(), fileHelper));
         generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, provider, modBlockTagsProvider.contentsGetter(), fileHelper));
 		
 		// Item model providers
