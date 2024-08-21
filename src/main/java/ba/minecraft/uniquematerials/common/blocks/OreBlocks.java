@@ -5,9 +5,15 @@ import ba.minecraft.uniquematerials.common.blocks.ore.LeadBlock;
 import ba.minecraft.uniquematerials.common.blocks.ore.SiliconBlock;
 import ba.minecraft.uniquematerials.common.blocks.ore.SilverBlock;
 import ba.minecraft.uniquematerials.common.blocks.ore.TitaniumBlock;
+import ba.minecraft.uniquematerials.common.blocks.ore.base.QuartzVariantChiseledBlock;
+import ba.minecraft.uniquematerials.common.blocks.ore.base.QuartzVariantPillarBlock;
+import ba.minecraft.uniquematerials.common.blocks.ore.base.QuartzVariantSlabBlock;
+import ba.minecraft.uniquematerials.common.blocks.ore.base.QuartzVariantSmoothBlock;
+import ba.minecraft.uniquematerials.common.blocks.ore.base.BaseStairsBlock;
 import ba.minecraft.uniquematerials.common.blocks.ore.base.DeepslateFoundOreBlock;
 import ba.minecraft.uniquematerials.common.blocks.ore.base.NetherrackFoundOreBlock;
 import ba.minecraft.uniquematerials.common.blocks.ore.base.QuartzVariantBlock;
+import ba.minecraft.uniquematerials.common.blocks.ore.base.QuartzVariantBricksBlock;
 import ba.minecraft.uniquematerials.common.blocks.ore.base.RawOreBlock;
 import ba.minecraft.uniquematerials.common.blocks.ore.base.SandstoneFoundOreBlock;
 import ba.minecraft.uniquematerials.common.blocks.ore.base.StoneFoundOreBlock;
@@ -106,6 +112,30 @@ public final class OreBlocks {
 
 	public static final RegistryObject<QuartzVariantBlock> AVENTURINE_BLOCK = 
 			REGISTRY.register("aventurine_block", () -> new QuartzVariantBlock(MapColor.COLOR_GREEN)); 
+
+	public static final RegistryObject<QuartzVariantSmoothBlock> SMOOTH_AVENTURINE = 
+			REGISTRY.register("smooth_aventurine", () -> new QuartzVariantSmoothBlock(MapColor.COLOR_GREEN)); 
+
+	public static final RegistryObject<QuartzVariantChiseledBlock> CHISELED_AVENTURINE_BLOCK = 
+			REGISTRY.register("chiseled_aventurine_block", () -> new QuartzVariantChiseledBlock(MapColor.COLOR_GREEN)); 
+
+	public static final RegistryObject<QuartzVariantPillarBlock> AVENTURINE_PILLAR = 
+			REGISTRY.register("aventurine_pillar", () -> new QuartzVariantPillarBlock(MapColor.COLOR_GREEN)); 
+
+	public static final RegistryObject<BaseStairsBlock> AVENTURINE_STAIRS = 
+			REGISTRY.register("aventurine_stairs", () -> new BaseStairsBlock(AVENTURINE_BLOCK.get())); 
+
+	public static final RegistryObject<QuartzVariantSlabBlock> AVENTURINE_SLAB = 
+			REGISTRY.register("aventurine_slab", () -> new QuartzVariantSlabBlock(MapColor.COLOR_GREEN)); 
+
+	public static final RegistryObject<BaseStairsBlock> SMOOTH_AVENTURINE_STAIRS = 
+			REGISTRY.register("smooth_aventurine_stairs", () -> new BaseStairsBlock(SMOOTH_AVENTURINE.get())); 
+
+	public static final RegistryObject<QuartzVariantSlabBlock> SMOOTH_AVENTURINE_SLAB = 
+			REGISTRY.register("smooth_aventurine_slab", () -> new QuartzVariantSlabBlock(SMOOTH_AVENTURINE.get())); 
+
+	public static final RegistryObject<QuartzVariantBricksBlock> AVENTURINE_BRICKS = 
+			REGISTRY.register("aventurine_bricks", () -> new QuartzVariantBricksBlock(AVENTURINE_BLOCK.get())); 
 
 	// Galena => Lead
 	

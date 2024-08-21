@@ -103,8 +103,16 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 		
 		// Aventurine
 		add(OreItems.AVENTURINE.get(), "Aventurine"); 
-		add(OreItems.NETHERRACK_AVENTURINE_ORE.get(), "Netherrack Aventurine Ore");
 		add(OreItems.AVENTURINE_BLOCK.get(), "Block of Aventurine"); 
+		add(OreItems.AVENTURINE_BRICKS.get(), "Aventurine Bricks"); 
+		add(OreItems.AVENTURINE_PILLAR.get(), "Aventurine Pillar"); 
+		add(OreItems.AVENTURINE_SLAB.get(), "Aventurine Slab"); 
+		add(OreItems.AVENTURINE_STAIRS.get(), "Aventurine Stairs"); 
+		add(OreItems.CHISELED_AVENTURINE_BLOCK.get(), "Chiseled Aventurine Block"); 
+		add(OreItems.NETHERRACK_AVENTURINE_ORE.get(), "Netherrack Aventurine Ore");
+		add(OreItems.SMOOTH_AVENTURINE.get(), "Smooth Aventurine"); 
+		add(OreItems.SMOOTH_AVENTURINE_SLAB.get(), "Smooth Aventurine Slab"); 
+		add(OreItems.SMOOTH_AVENTURINE_STAIRS.get(), "Smooth Aventurine Stairs"); 
 
 		// Galena -> Lead
 		add(OreItems.GALENA_ORE.get(), "Galena Ore");

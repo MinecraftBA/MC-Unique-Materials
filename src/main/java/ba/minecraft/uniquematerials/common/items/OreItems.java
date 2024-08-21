@@ -150,6 +150,30 @@ public final class OreItems {
 	public static final RegistryObject<BlockItem> AVENTURINE_BLOCK = 
 			registerBlockItem("aventurine_block", () -> OreBlocks.AVENTURINE_BLOCK.get());
 
+	public static final RegistryObject<BlockItem> AVENTURINE_BRICKS = 
+			registerBlockItem("aventurine_bricks", () -> OreBlocks.AVENTURINE_BRICKS.get());
+
+	public static final RegistryObject<BlockItem> AVENTURINE_PILLAR = 
+			registerBlockItem("aventurine_pillar", () -> OreBlocks.AVENTURINE_PILLAR.get());
+
+	public static final RegistryObject<BlockItem> AVENTURINE_SLAB = 
+			registerBlockItem("aventurine_slab", () -> OreBlocks.AVENTURINE_SLAB.get());
+
+	public static final RegistryObject<BlockItem> AVENTURINE_STAIRS = 
+			registerBlockItem("aventurine_stairs", () -> OreBlocks.AVENTURINE_STAIRS.get());
+
+	public static final RegistryObject<BlockItem> CHISELED_AVENTURINE_BLOCK = 
+			registerBlockItem("chiseled_aventurine_block", () -> OreBlocks.CHISELED_AVENTURINE_BLOCK.get());
+
+	public static final RegistryObject<BlockItem> SMOOTH_AVENTURINE = 
+			registerBlockItem("smooth_aventurine", () -> OreBlocks.SMOOTH_AVENTURINE.get());
+
+	public static final RegistryObject<BlockItem> SMOOTH_AVENTURINE_SLAB = 
+			registerBlockItem("smooth_aventurine_slab", () -> OreBlocks.SMOOTH_AVENTURINE_SLAB.get());
+
+	public static final RegistryObject<BlockItem> SMOOTH_AVENTURINE_STAIRS = 
+			registerBlockItem("smooth_aventurine_stairs", () -> OreBlocks.SMOOTH_AVENTURINE_STAIRS.get());
+
 	// Galena ore -> Lead
 	
 	public static final RegistryObject<Item> RAW_GALENA =  

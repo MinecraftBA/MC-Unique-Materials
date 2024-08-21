@@ -12,8 +12,12 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -95,7 +99,15 @@ public final class ModBlockStateProvider extends BlockStateProvider {
 
 		// Aventurine
 		simpleBlock(OreBlocks.NETHERRACK_AVENTURINE_ORE.get());
-		cubeColumnBlock(OreBlocks.AVENTURINE_BLOCK.get());
+		quartzVariantBlock(OreBlocks.AVENTURINE_BLOCK.get());
+		simpleBlock(OreBlocks.AVENTURINE_BRICKS.get());
+		quartzVariantPillarBlock(OreBlocks.AVENTURINE_PILLAR.get());
+		quartzVariantStairsBlock(OreBlocks.AVENTURINE_STAIRS.get(), OreBlocks.AVENTURINE_BLOCK.get());
+		quartzVariantSlabBlock(OreBlocks.AVENTURINE_SLAB.get(), OreBlocks.AVENTURINE_BLOCK.get());
+		quartzVariantChiseledBlock(OreBlocks.CHISELED_AVENTURINE_BLOCK.get());
+		quartzVariantSmoothBlock(OreBlocks.SMOOTH_AVENTURINE.get(), OreBlocks.AVENTURINE_BLOCK.get());
+		quartzVariantSmoothSlabBlock(OreBlocks.SMOOTH_AVENTURINE_SLAB.get(), OreBlocks.AVENTURINE_BLOCK.get());
+		quartzVariantSmoothStairsBlock(OreBlocks.SMOOTH_AVENTURINE_STAIRS.get(), OreBlocks.AVENTURINE_BLOCK.get());
 
 		// Galena => Lead
 		simpleBlock(OreBlocks.GALENA_ORE.get());
@@ -135,16 +147,99 @@ public final class ModBlockStateProvider extends BlockStateProvider {
 		
 		simpleBlock(block, modelBuilder);
 	}
-	
-	private void cubeColumnBlock(Block block) {
+
+	private void cubeColumnBlock(Block block, String sideSuffix, String topSuffix) {
+		
+		// eg: block/aventurine_block
 		String registryName = registryName(block);
-		ResourceLocation sideTextureLocation = ModResourceHelper.create("block/" + registryName + "_side");
-		ResourceLocation endTextureLocation = ModResourceHelper.create("block/" + registryName + "_top");
+		
+		// eg: block/aventurine_block_side
+		ResourceLocation sideTextureLocation = textureResourceLocation(block, sideSuffix);
+
+		// eg: block/aventurine_block_top
+		ResourceLocation endTextureLocation = textureResourceLocation(block, topSuffix);
 
 		BlockModelBuilder modelBuilder = models()
 				.cubeColumn(registryName, sideTextureLocation, endTextureLocation);
 		
 		simpleBlock(block, modelBuilder);
+	}
+	
+	private void quartzVariantChiseledBlock(Block block) {
+		cubeColumnBlock(block, "", "_top");
+	}
+
+	private void quartzVariantBlock(Block block) {
+		cubeColumnBlock(block, "_side", "_top");
+	}
+	
+	private void quartzVariantSmoothBlock(Block smoothBlock, Block block) {
+		
+		// eg: block/aventurine_block_bottom
+		ResourceLocation textureLocation = textureResourceLocation(block, "_bottom");
+		
+		simpleBlock(smoothBlock, textureLocation);
+	}
+	
+    public void simpleBlock(Block block, ResourceLocation textureLocation) {
+        simpleBlock(block, cubeAll(block, textureLocation));
+    }
+    
+    public ModelFile cubeAll(Block block, ResourceLocation textureLocation) {
+        return models().cubeAll(registryName(block), textureLocation);
+    }
+
+	private void quartzVariantPillarBlock(RotatedPillarBlock block) {
+		
+		// eg: block/aventurine_pillar_block
+		ResourceLocation sideTextureLocation = textureResourceLocation(block);
+		
+		// eg: block/aventurine_pillar_block_top
+		ResourceLocation endTextureLocation = textureResourceLocation(block, "_top");
+		
+		axisBlock(block, sideTextureLocation, endTextureLocation);
+	}
+	
+	private void quartzVariantSlabBlock(SlabBlock slabBlock, Block block) 
+	{
+		// Eg: block/aventurine_slab_top
+		String doublesName = registryName(slabBlock) + "_top";
+		ResourceLocation doubleResourceLocation = ModResourceHelper.create(doublesName);
+		
+		// Eg: block/aventurine_block_top and blocks/aventurine_block_side
+		ResourceLocation topTextureLocation = textureResourceLocation(block, "_top");
+		ResourceLocation sideTextureLocation = textureResourceLocation(block, "_side");
+		
+		slabBlock(slabBlock, doubleResourceLocation, sideTextureLocation, topTextureLocation, topTextureLocation);
+	}
+	
+	private void quartzVariantSmoothSlabBlock(SlabBlock slabBlock, Block block) 
+	{
+		// Eg: block/aventurine_slab_top
+		String doublesName = registryName(slabBlock) + "_top";
+		ResourceLocation doubleResourceLocation = ModResourceHelper.create(doublesName);
+		
+		// Eg: block/aventurine_block_top and blocks/aventurine_block_side
+		ResourceLocation bottomTextureLocation = textureResourceLocation(block, "_bottom");
+		
+		slabBlock(slabBlock, doubleResourceLocation, bottomTextureLocation, bottomTextureLocation, bottomTextureLocation);
+	}
+	
+	private void quartzVariantStairsBlock(StairBlock stairsBlock, Block block) 
+	{
+		// Eg: block/aventurine_block_top and blocks/aventurine_block_side
+		ResourceLocation topTextureLocation = textureResourceLocation(block, "_top");
+		ResourceLocation sideTextureLocation = textureResourceLocation(block, "_side");
+		
+		stairsBlock(stairsBlock, sideTextureLocation, topTextureLocation, topTextureLocation);
+	}
+	
+	private void quartzVariantSmoothStairsBlock(StairBlock stairsBlock, Block block) 
+	{
+		// Eg: block/aventurine_block_top and blocks/aventurine_block_side
+		ResourceLocation bottomTextureLocation = textureResourceLocation(block, "_bottom");
+		
+		stairsBlock(stairsBlock, bottomTextureLocation, bottomTextureLocation, bottomTextureLocation);
 	}
 	
 	private String getRenderTypeName(RenderType renderType) {
@@ -161,4 +256,15 @@ public final class ModBlockStateProvider extends BlockStateProvider {
 	private String cutout() {
 		return getRenderTypeName(RenderType.cutout());
 	}
+	
+	private ResourceLocation textureResourceLocation(Block block) {
+		String registryName = registryName(block);
+		return ModResourceHelper.create("block/" + registryName);
+	}
+	
+	private ResourceLocation textureResourceLocation(Block block, String suffix) {
+		String registryName = registryName(block);
+		return ModResourceHelper.create("block/" + registryName + suffix);
+	}
+
 }

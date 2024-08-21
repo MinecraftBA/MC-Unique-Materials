@@ -13,10 +13,12 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public final class ModRecipeProvider extends RecipeProvider {
@@ -118,8 +120,29 @@ public final class ModRecipeProvider extends RecipeProvider {
 	        .save(recipeOutput, getSmeltingRecipeName(OreItems.AVENTURINE.get()));
         
         SimpleCookingRecipeBuilder.blasting(Ingredient.of(OreBlocks.NETHERRACK_AVENTURINE_ORE.get()), RecipeCategory.MISC, OreItems.AVENTURINE.get(), 0.2F, 100)
-	        .unlockedBy("has_nether_quartz_ore", has(OreBlocks.NETHERRACK_AVENTURINE_ORE.get()))
+	        .unlockedBy("has_netherrack_aventurine_ore", has(OreBlocks.NETHERRACK_AVENTURINE_ORE.get()))
 	        .save(recipeOutput, getBlastingRecipeName(OreItems.AVENTURINE.get()));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, OreBlocks.AVENTURINE_BRICKS.get(), 4)
+	        .define('#', OreBlocks.AVENTURINE_BLOCK.get())
+	        .pattern("##")
+	        .pattern("##")
+	        .unlockedBy("has_aventurine_block", has(OreBlocks.AVENTURINE_BLOCK.get()))
+	        .save(recipeOutput);
+        
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(OreBlocks.AVENTURINE_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, OreBlocks.SMOOTH_AVENTURINE.get().asItem(), 0.1F, 200)
+	        .unlockedBy("has_aventurine_block", has(OreBlocks.AVENTURINE_BLOCK.get()))
+	        .save(recipeOutput);
+        
+        stairBuilder(OreBlocks.AVENTURINE_STAIRS.get(), Ingredient.of(OreBlocks.CHISELED_AVENTURINE_BLOCK.get(), OreBlocks.AVENTURINE_BLOCK.get(), OreBlocks.AVENTURINE_PILLAR.get()))
+	        .unlockedBy("has_chiseled_aventurine_block", has(Blocks.CHISELED_QUARTZ_BLOCK))
+	        .unlockedBy("has_aventurine_block", has(OreBlocks.AVENTURINE_BLOCK.get()))
+	        .unlockedBy("has_aventurine_pillar", has(OreBlocks.AVENTURINE_PILLAR.get()))
+	        .save(recipeOutput);
+
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.AVENTURINE_BRICKS.get(), OreBlocks.AVENTURINE_BLOCK.get());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.SMOOTH_AVENTURINE_SLAB.get(), OreBlocks.SMOOTH_AVENTURINE.get(), 2);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.SMOOTH_AVENTURINE_STAIRS.get(), OreBlocks.SMOOTH_AVENTURINE.get());
 
 	}
 	
