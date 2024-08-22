@@ -15,10 +15,10 @@ import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public final class ModRecipeProvider extends RecipeProvider {
@@ -32,6 +32,11 @@ public final class ModRecipeProvider extends RecipeProvider {
 		
 		buildOreRecipes(recipeOutput);
 		buildTreeRecipes(recipeOutput);
+		
+		buildBlastingRecipes(recipeOutput);
+		buildCraftingRecipes(recipeOutput);
+		buildSmeltingRecipes(recipeOutput);
+		buildStonecutterRecipes(recipeOutput);
     }
 	
 	protected void buildOreRecipes(RecipeOutput recipeOutput) {
@@ -104,46 +109,6 @@ public final class ModRecipeProvider extends RecipeProvider {
 	    addIngotsFromBlockCrafting(recipeOutput, OreItems.LEAD_INGOT.get(), OreItems.LEAD_BLOCK.get());
 	    addNugetsFromIngotCrafting(recipeOutput, OreItems.LEAD_NUGGET.get(), OreItems.LEAD_INGOT.get());	
 
-	    // Aventurine
-	    
-	    ImmutableList<ItemLike> aventurineSmeltables = ImmutableList.of(
-			OreItems.NETHERRACK_AVENTURINE_ORE.get()
-		);
-        twoByTwoPacker(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.AVENTURINE_BLOCK.get(), OreItems.AVENTURINE.get());
-
-        // Improved alternative for recipes below. 
-	    //addOreSmelting(recipeOutput, aventurineSmeltables, OreItems.AVENTURINE.get(), 0.2F, 200); 
-	    //addOreBlasting(recipeOutput, aventurineSmeltables, OreItems.AVENTURINE.get(), 0.2F, 100);
-
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(OreBlocks.NETHERRACK_AVENTURINE_ORE.get()), RecipeCategory.MISC, OreItems.AVENTURINE.get(), 0.2F, 200)
-	        .unlockedBy("has_netherrack_aventurine_ore", has(OreBlocks.NETHERRACK_AVENTURINE_ORE.get()))
-	        .save(recipeOutput, getSmeltingRecipeName(OreItems.AVENTURINE.get()));
-        
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(OreBlocks.NETHERRACK_AVENTURINE_ORE.get()), RecipeCategory.MISC, OreItems.AVENTURINE.get(), 0.2F, 100)
-	        .unlockedBy("has_netherrack_aventurine_ore", has(OreBlocks.NETHERRACK_AVENTURINE_ORE.get()))
-	        .save(recipeOutput, getBlastingRecipeName(OreItems.AVENTURINE.get()));
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, OreBlocks.AVENTURINE_BRICKS.get(), 4)
-	        .define('#', OreBlocks.AVENTURINE_BLOCK.get())
-	        .pattern("##")
-	        .pattern("##")
-	        .unlockedBy("has_aventurine_block", has(OreBlocks.AVENTURINE_BLOCK.get()))
-	        .save(recipeOutput);
-        
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(OreBlocks.AVENTURINE_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, OreBlocks.SMOOTH_AVENTURINE.get().asItem(), 0.1F, 200)
-	        .unlockedBy("has_aventurine_block", has(OreBlocks.AVENTURINE_BLOCK.get()))
-	        .save(recipeOutput);
-        
-        stairBuilder(OreBlocks.AVENTURINE_STAIRS.get(), Ingredient.of(OreBlocks.CHISELED_AVENTURINE_BLOCK.get(), OreBlocks.AVENTURINE_BLOCK.get(), OreBlocks.AVENTURINE_PILLAR.get()))
-	        .unlockedBy("has_chiseled_aventurine_block", has(Blocks.CHISELED_QUARTZ_BLOCK))
-	        .unlockedBy("has_aventurine_block", has(OreBlocks.AVENTURINE_BLOCK.get()))
-	        .unlockedBy("has_aventurine_pillar", has(OreBlocks.AVENTURINE_PILLAR.get()))
-	        .save(recipeOutput);
-
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.AVENTURINE_BRICKS.get(), OreBlocks.AVENTURINE_BLOCK.get());
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.SMOOTH_AVENTURINE_SLAB.get(), OreBlocks.SMOOTH_AVENTURINE.get(), 2);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.SMOOTH_AVENTURINE_STAIRS.get(), OreBlocks.SMOOTH_AVENTURINE.get());
-
 	}
 	
 	protected void buildTreeRecipes(RecipeOutput recipeOutput)  {
@@ -166,6 +131,75 @@ public final class ModRecipeProvider extends RecipeProvider {
 		woodFromLogs(recipeOutput, TreeItems.SEQUOIA_WOOD.get(), TreeItems.SEQUOIA_LOG.get());
 		woodFromLogs(recipeOutput, TreeItems.STRIPPED_SEQUOIA_WOOD.get(), TreeItems.STRIPPED_SEQUOIA_LOG.get());
 
+	}
+	
+	private void buildStonecutterRecipes(RecipeOutput recipeOutput) {
+		
+		// Aventurine
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.AVENTURINE_STAIRS.get(), OreBlocks.AVENTURINE_BLOCK.get());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.AVENTURINE_PILLAR.get(), OreBlocks.AVENTURINE_BLOCK.get());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.CHISELED_AVENTURINE_BLOCK.get(), OreBlocks.AVENTURINE_BLOCK.get());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.AVENTURINE_BRICKS.get(), OreBlocks.AVENTURINE_BLOCK.get());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.SMOOTH_AVENTURINE_SLAB.get(), OreBlocks.SMOOTH_AVENTURINE.get(), 2);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.SMOOTH_AVENTURINE_STAIRS.get(), OreBlocks.SMOOTH_AVENTURINE.get());
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(OreBlocks.AVENTURINE_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, OreBlocks.AVENTURINE_SLAB.get(), 2)
+	        .unlockedBy("has_aventurine_block", has(OreBlocks.AVENTURINE_BLOCK.get()))
+	        .save(recipeOutput, "aventurine_slab_from_stonecutting");
+	}
+	
+	private void buildBlastingRecipes(RecipeOutput recipeOutput) {
+		
+		// Aventurine
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(OreBlocks.NETHERRACK_AVENTURINE_ORE.get()), RecipeCategory.MISC, OreItems.AVENTURINE.get(), 0.2F, 100)
+	        .unlockedBy("has_netherrack_aventurine_ore", has(OreBlocks.NETHERRACK_AVENTURINE_ORE.get()))
+	        .save(recipeOutput, getBlastingRecipeName(OreItems.AVENTURINE.get()));
+	}
+	
+	private void buildCraftingRecipes(RecipeOutput recipeOutput) {
+		
+		// Aventurine
+        chiseledBuilder(RecipeCategory.BUILDING_BLOCKS, OreBlocks.CHISELED_AVENTURINE_BLOCK.get(), Ingredient.of(OreBlocks.AVENTURINE_SLAB.get()))
+	        .unlockedBy("has_chiseled_aventurine_block", has(OreBlocks.CHISELED_AVENTURINE_BLOCK.get()))
+	        .unlockedBy("has_aventurine_block", has(OreBlocks.AVENTURINE_BLOCK.get()))
+	        .unlockedBy("has_aventurine_pillar", has(OreBlocks.AVENTURINE_PILLAR.get()))
+	        .save(recipeOutput);
+	    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, OreBlocks.AVENTURINE_PILLAR.get(), 2)
+	        .define('#', OreBlocks.AVENTURINE_BLOCK.get())
+	        .pattern("#")
+	        .pattern("#")
+	        .unlockedBy("has_chiseled_aventurine_block", has(OreBlocks.CHISELED_AVENTURINE_BLOCK.get()))
+	        .unlockedBy("has_aventurine_block", has(OreBlocks.AVENTURINE_BLOCK.get()))
+	        .unlockedBy("has_aventurine_pillar", has(OreBlocks.AVENTURINE_PILLAR.get()))
+	        .save(recipeOutput);
+	    twoByTwoPacker(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.AVENTURINE_BLOCK.get(), OreItems.AVENTURINE.get());
+	    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, OreBlocks.AVENTURINE_BRICKS.get(), 4)
+	        .define('#', OreBlocks.AVENTURINE_BLOCK.get())
+	        .pattern("##")
+	        .pattern("##")
+	        .unlockedBy("has_aventurine_block", has(OreBlocks.AVENTURINE_BLOCK.get()))
+	        .save(recipeOutput);
+	    slabBuilder(RecipeCategory.BUILDING_BLOCKS, OreBlocks.AVENTURINE_SLAB.get(), Ingredient.of(OreBlocks.CHISELED_AVENTURINE_BLOCK.get(), OreBlocks.AVENTURINE_BLOCK.get(), OreBlocks.AVENTURINE_PILLAR.get()))
+	        .unlockedBy("has_chiseled_aventurine_block", has(OreBlocks.CHISELED_AVENTURINE_BLOCK.get()))
+	        .unlockedBy("has_aventurine_block", has(OreBlocks.AVENTURINE_BLOCK.get()))
+	        .unlockedBy("has_aventurine_pillar", has(OreBlocks.AVENTURINE_PILLAR.get()))
+	        .save(recipeOutput);
+	    stairBuilder(OreBlocks.AVENTURINE_STAIRS.get(), Ingredient.of(OreBlocks.CHISELED_AVENTURINE_BLOCK.get(), OreBlocks.AVENTURINE_BLOCK.get(), OreBlocks.AVENTURINE_PILLAR.get()))
+	        .unlockedBy("has_chiseled_aventurine_block", has(OreBlocks.CHISELED_AVENTURINE_BLOCK.get()))
+	        .unlockedBy("has_aventurine_block", has(OreBlocks.AVENTURINE_BLOCK.get()))
+	        .unlockedBy("has_aventurine_pillar", has(OreBlocks.AVENTURINE_PILLAR.get()))
+	        .save(recipeOutput);
+
+	}
+
+	private void buildSmeltingRecipes(RecipeOutput recipeOutput) { 
+
+		// Aventurine
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(OreBlocks.NETHERRACK_AVENTURINE_ORE.get()), RecipeCategory.MISC, OreItems.AVENTURINE.get(), 0.2F, 200)
+        	.unlockedBy("has_nether_aventurine_ore", has(OreBlocks.NETHERRACK_AVENTURINE_ORE.get()))
+        	.save(recipeOutput);
+	    SimpleCookingRecipeBuilder.smelting(Ingredient.of(OreBlocks.AVENTURINE_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, OreBlocks.SMOOTH_AVENTURINE.get().asItem(), 0.1F, 200)
+	        .unlockedBy("has_aventurine_block", has(OreBlocks.AVENTURINE_BLOCK.get()))
+	        .save(recipeOutput);
 	}
 
 	private void addOreSmelting(RecipeOutput recipeOutput, List<ItemLike> smeltables, Item ingot, float experience, int cookingTime) {
