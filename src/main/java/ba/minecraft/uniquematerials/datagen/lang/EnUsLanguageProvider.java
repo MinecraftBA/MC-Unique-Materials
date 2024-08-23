@@ -104,8 +104,8 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 		add(OreItems.CITRINE_PILLAR.get(), "Citrine Pillar"); 
 		add(OreItems.CITRINE_SLAB.get(), "Citrine Slab"); 
 		add(OreItems.CITRINE_STAIRS.get(), "Citrine Stairs"); 
+		add(OreItems.CITRINE_BLOCK.get(), "Citrine Block"); 
 		add(OreItems.CHISELED_CITRINE_BLOCK.get(), "Chiseled Citrine Block"); 
-		add(OreItems.NETHERRACK_CITRINE_ORE.get(), "Netherrack Citrine Ore");
 		add(OreItems.SMOOTH_CITRINE.get(), "Smooth Citrine"); 
 		add(OreItems.SMOOTH_CITRINE_SLAB.get(), "Smooth Citrine Slab"); 
 		add(OreItems.SMOOTH_CITRINE_STAIRS.get(), "Smooth Citrine Stairs"); 
