@@ -94,6 +94,17 @@ public final class BuildCreativeModeTabContentsEventHandler {
 			event.accept(OreItems.SMOOTH_AVENTURINE);
 			event.accept(OreItems.SMOOTH_AVENTURINE_SLAB);
 			event.accept(OreItems.SMOOTH_AVENTURINE_STAIRS);
+			
+			// Citrine
+			event.accept(OreItems.CITRINE_BLOCK);
+			event.accept(OreItems.CITRINE_BRICKS);
+			event.accept(OreItems.CITRINE_PILLAR);
+			event.accept(OreItems.CITRINE_SLAB);
+			event.accept(OreItems.CITRINE_STAIRS);
+			event.accept(OreItems.CHISELED_CITRINE_BLOCK);
+			event.accept(OreItems.SMOOTH_CITRINE);
+			event.accept(OreItems.SMOOTH_CITRINE_SLAB);
+			event.accept(OreItems.SMOOTH_CITRINE_STAIRS);
 
 			// Logs (available as both natural and building blocks)
 			event.accept(TreeItems.BEECH_LOG);

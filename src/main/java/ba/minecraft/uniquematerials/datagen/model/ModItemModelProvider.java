@@ -71,6 +71,15 @@ public final class ModItemModelProvider extends ItemModelProvider {
 		
 		generated(OreItems.CITRINE.get());
 		blockItem(OreItems.NETHERRACK_CITRINE_ORE.get());
+		blockItem(OreItems.CITRINE_BLOCK.get());
+		blockItem(OreItems.CITRINE_BRICKS.get());
+		blockItem(OreItems.CITRINE_PILLAR.get());
+		blockItem(OreItems.CITRINE_SLAB.get());
+		blockItem(OreItems.CITRINE_STAIRS.get());
+		blockItem(OreItems.CHISELED_CITRINE_BLOCK.get());
+		blockItem(OreItems.SMOOTH_CITRINE.get());
+		blockItem(OreItems.SMOOTH_CITRINE_SLAB.get());
+		blockItem(OreItems.SMOOTH_CITRINE_STAIRS.get());
 
 		// Aventurine
 		

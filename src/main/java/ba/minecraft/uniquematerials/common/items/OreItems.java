@@ -138,6 +138,34 @@ public final class OreItems {
 	
 	public static final RegistryObject<BlockItem> NETHERRACK_CITRINE_ORE = 
 			registerBlockItem("netherrack_citrine_ore", () -> OreBlocks.NETHERRACK_CITRINE_ORE.get());
+	
+	public static final RegistryObject<BlockItem> CITRINE_BLOCK = 
+			registerBlockItem("citrine_block", () -> OreBlocks.CITRINE_BLOCK.get());
+
+	public static final RegistryObject<BlockItem> CITRINE_BRICKS = 
+			registerBlockItem("citrine_bricks", () -> OreBlocks.CITRINE_BRICKS.get());
+
+	public static final RegistryObject<BlockItem> CITRINE_PILLAR = 
+			registerBlockItem("citrine_pillar", () -> OreBlocks.CITRINE_PILLAR.get());
+
+	public static final RegistryObject<BlockItem> CITRINE_SLAB = 
+			registerBlockItem("citrine_slab", () -> OreBlocks.CITRINE_SLAB.get());
+
+	public static final RegistryObject<BlockItem> CITRINE_STAIRS = 
+			registerBlockItem("citrine_stairs", () -> OreBlocks.CITRINE_STAIRS.get());
+
+	public static final RegistryObject<BlockItem> CHISELED_CITRINE_BLOCK = 
+			registerBlockItem("chiseled_citrine_block", () -> OreBlocks.CHISELED_CITRINE_BLOCK.get());
+
+	public static final RegistryObject<BlockItem> SMOOTH_CITRINE = 
+			registerBlockItem("smooth_citrine", () -> OreBlocks.SMOOTH_CITRINE.get());
+
+	public static final RegistryObject<BlockItem> SMOOTH_CITRINE_SLAB = 
+			registerBlockItem("smooth_citrine_slab", () -> OreBlocks.SMOOTH_CITRINE_SLAB.get());
+
+	public static final RegistryObject<BlockItem> SMOOTH_CITRINE_STAIRS = 
+			registerBlockItem("smooth_citrine_stairs", () -> OreBlocks.SMOOTH_CITRINE_STAIRS.get());
+
 
 	// Aventurine Ore -> Aventurine Crystal
 

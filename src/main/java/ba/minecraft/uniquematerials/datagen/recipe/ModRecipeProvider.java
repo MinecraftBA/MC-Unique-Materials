@@ -145,6 +145,17 @@ public final class ModRecipeProvider extends RecipeProvider {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(OreBlocks.AVENTURINE_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, OreBlocks.AVENTURINE_SLAB.get(), 2)
 	        .unlockedBy("has_aventurine_block", has(OreBlocks.AVENTURINE_BLOCK.get()))
 	        .save(recipeOutput, "aventurine_slab_from_stonecutting");
+        
+     // Citrine
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.CITRINE_STAIRS.get(), OreBlocks.CITRINE_BLOCK.get());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.CITRINE_PILLAR.get(), OreBlocks.CITRINE_BLOCK.get());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.CHISELED_CITRINE_BLOCK.get(), OreBlocks.CITRINE_BLOCK.get());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.CITRINE_BRICKS.get(), OreBlocks.CITRINE_BLOCK.get());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.SMOOTH_CITRINE_SLAB.get(), OreBlocks.SMOOTH_CITRINE.get(), 2);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.SMOOTH_CITRINE_STAIRS.get(), OreBlocks.SMOOTH_CITRINE.get());
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(OreBlocks.CITRINE_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, OreBlocks.CITRINE_SLAB.get(), 2)
+	        .unlockedBy("has_citrine_block", has(OreBlocks.CITRINE_BLOCK.get()))
+	        .save(recipeOutput, "citrine_slab_from_stonecutting");
 	}
 	
 	private void buildBlastingRecipes(RecipeOutput recipeOutput) {
@@ -153,6 +164,10 @@ public final class ModRecipeProvider extends RecipeProvider {
         SimpleCookingRecipeBuilder.blasting(Ingredient.of(OreBlocks.NETHERRACK_AVENTURINE_ORE.get()), RecipeCategory.MISC, OreItems.AVENTURINE.get(), 0.2F, 100)
 	        .unlockedBy("has_netherrack_aventurine_ore", has(OreBlocks.NETHERRACK_AVENTURINE_ORE.get()))
 	        .save(recipeOutput, getBlastingRecipeName(OreItems.AVENTURINE.get()));
+        
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(OreBlocks.NETHERRACK_CITRINE_ORE.get()), RecipeCategory.MISC, OreItems.CITRINE.get(), 0.2F, 100)
+        .unlockedBy("has_netherrack_citrine_ore", has(OreBlocks.NETHERRACK_CITRINE_ORE.get()))
+        .save(recipeOutput, getBlastingRecipeName(OreItems.CITRINE.get()));
 	}
 	
 	private void buildCraftingRecipes(RecipeOutput recipeOutput) {
@@ -188,7 +203,37 @@ public final class ModRecipeProvider extends RecipeProvider {
 	        .unlockedBy("has_aventurine_block", has(OreBlocks.AVENTURINE_BLOCK.get()))
 	        .unlockedBy("has_aventurine_pillar", has(OreBlocks.AVENTURINE_PILLAR.get()))
 	        .save(recipeOutput);
-
+	    	//Citrine
+	    chiseledBuilder(RecipeCategory.BUILDING_BLOCKS, OreBlocks.CHISELED_CITRINE_BLOCK.get(), Ingredient.of(OreBlocks.CITRINE_SLAB.get()))
+        .unlockedBy("has_chiseled_citrine_block", has(OreBlocks.CHISELED_CITRINE_BLOCK.get()))
+        .unlockedBy("has_citrine_block", has(OreBlocks.CITRINE_BLOCK.get()))
+        .unlockedBy("has_citrine_pillar", has(OreBlocks.CITRINE_PILLAR.get()))
+        .save(recipeOutput);
+    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, OreBlocks.CITRINE_PILLAR.get(), 2)
+        .define('#', OreBlocks.CITRINE_BLOCK.get())
+        .pattern("#")
+        .pattern("#")
+        .unlockedBy("has_chiseled_citrine_block", has(OreBlocks.CHISELED_CITRINE_BLOCK.get()))
+        .unlockedBy("has_citrine_block", has(OreBlocks.CITRINE_BLOCK.get()))
+        .unlockedBy("has_citrine_pillar", has(OreBlocks.CITRINE_PILLAR.get()))
+        .save(recipeOutput);
+    twoByTwoPacker(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.CITRINE_BLOCK.get(), OreItems.CITRINE.get());
+    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, OreBlocks.CITRINE_BRICKS.get(), 4)
+        .define('#', OreBlocks.CITRINE_BLOCK.get())
+        .pattern("##")
+        .pattern("##")
+        .unlockedBy("has_citrine_block", has(OreBlocks.CITRINE_BLOCK.get()))
+        .save(recipeOutput);
+    slabBuilder(RecipeCategory.BUILDING_BLOCKS, OreBlocks.CITRINE_SLAB.get(), Ingredient.of(OreBlocks.CHISELED_CITRINE_BLOCK.get(), OreBlocks.CITRINE_BLOCK.get(), OreBlocks.CITRINE_PILLAR.get()))
+        .unlockedBy("has_chiseled_citrine_block", has(OreBlocks.CHISELED_CITRINE_BLOCK.get()))
+        .unlockedBy("has_citrine_block", has(OreBlocks.CITRINE_BLOCK.get()))
+        .unlockedBy("has_citrine_pillar", has(OreBlocks.CITRINE_PILLAR.get()))
+        .save(recipeOutput);
+    stairBuilder(OreBlocks.CITRINE_STAIRS.get(), Ingredient.of(OreBlocks.CHISELED_CITRINE_BLOCK.get(), OreBlocks.CITRINE_BLOCK.get(), OreBlocks.CITRINE_PILLAR.get()))
+        .unlockedBy("has_chiseled_citrine_block", has(OreBlocks.CHISELED_CITRINE_BLOCK.get()))
+        .unlockedBy("has_citrine_block", has(OreBlocks.CITRINE_BLOCK.get()))
+        .unlockedBy("has_citrine_pillar", has(OreBlocks.CITRINE_PILLAR.get()))
+        .save(recipeOutput);
 	}
 
 	private void buildSmeltingRecipes(RecipeOutput recipeOutput) { 
@@ -200,6 +245,14 @@ public final class ModRecipeProvider extends RecipeProvider {
 	    SimpleCookingRecipeBuilder.smelting(Ingredient.of(OreBlocks.AVENTURINE_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, OreBlocks.SMOOTH_AVENTURINE.get().asItem(), 0.1F, 200)
 	        .unlockedBy("has_aventurine_block", has(OreBlocks.AVENTURINE_BLOCK.get()))
 	        .save(recipeOutput);
+	    
+	 // citrine
+	 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(OreBlocks.NETHERRACK_CITRINE_ORE.get()), RecipeCategory.MISC, OreItems.CITRINE.get(), 0.2F, 200)
+	         	.unlockedBy("has_nether_citrine_ore", has(OreBlocks.NETHERRACK_CITRINE_ORE.get()))
+	         	.save(recipeOutput);
+	 	    SimpleCookingRecipeBuilder.smelting(Ingredient.of(OreBlocks.CITRINE_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, OreBlocks.SMOOTH_CITRINE.get().asItem(), 0.1F, 200)
+	 	        .unlockedBy("has_citrine_block", has(OreBlocks.CITRINE_BLOCK.get()))
+	 	        .save(recipeOutput);
 	}
 
 	private void addOreSmelting(RecipeOutput recipeOutput, List<ItemLike> smeltables, Item ingot, float experience, int cookingTime) {

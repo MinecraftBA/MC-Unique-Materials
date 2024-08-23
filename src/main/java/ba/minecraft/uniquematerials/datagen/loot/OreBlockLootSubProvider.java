@@ -88,6 +88,20 @@ public final class OreBlockLootSubProvider extends BlockLootSubProvider {
 		add(OreBlocks.NETHERRACK_CITRINE_ORE.get(), ($block) -> {
 	    	return createOreDrop($block, OreItems.CITRINE.get());
 		});
+		
+		dropSelf(OreBlocks.CITRINE_BLOCK.get());
+		dropSelf(OreBlocks.CITRINE_BRICKS.get());
+		dropSelf(OreBlocks.CITRINE_PILLAR.get());
+		add(OreBlocks.CITRINE_SLAB.get(), ($block) -> { 
+			return createSlabItemTable($block); 
+		});
+		dropSelf(OreBlocks.CITRINE_STAIRS.get());
+		dropSelf(OreBlocks.CHISELED_CITRINE_BLOCK.get());
+		dropSelf(OreBlocks.SMOOTH_CITRINE.get());
+		add(OreBlocks.SMOOTH_CITRINE_SLAB.get(), ($block) -> { 
+			return createSlabItemTable($block); 
+		});
+		dropSelf(OreBlocks.SMOOTH_CITRINE_STAIRS.get());
 
 		// Aventurine
 		

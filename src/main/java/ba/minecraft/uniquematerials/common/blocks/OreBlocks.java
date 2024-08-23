@@ -99,11 +99,6 @@ public final class OreBlocks {
 	
 	public static final RegistryObject<Block> SILVER_BLOCK = 
 			REGISTRY.register("silver_block", () -> new SilverBlock()); 
-	
-	// Citrine
-
-	public static final RegistryObject<DropExperienceBlock> NETHERRACK_CITRINE_ORE = 
-			REGISTRY.register("netherrack_citrine_ore", () -> new NetherrackFoundOreBlock(UniformInt.of(3, 7))); 
 
 	// Aventurine
 
@@ -137,6 +132,39 @@ public final class OreBlocks {
 	public static final RegistryObject<QuartzVariantBricksBlock> AVENTURINE_BRICKS = 
 			REGISTRY.register("aventurine_bricks", () -> new QuartzVariantBricksBlock(AVENTURINE_BLOCK.get())); 
 
+	// Citrine
+	
+	public static final RegistryObject<DropExperienceBlock> NETHERRACK_CITRINE_ORE = 
+			REGISTRY.register("netherrack_citrine_ore", () -> new NetherrackFoundOreBlock(UniformInt.of(3, 7))); 
+
+	public static final RegistryObject<QuartzVariantBlock> CITRINE_BLOCK = 
+			REGISTRY.register("citrine_block", () -> new QuartzVariantBlock(MapColor.COLOR_YELLOW)); 
+
+	public static final RegistryObject<QuartzVariantSmoothBlock> SMOOTH_CITRINE = 
+			REGISTRY.register("smooth_citrine", () -> new QuartzVariantSmoothBlock(MapColor.COLOR_YELLOW)); 
+
+	public static final RegistryObject<QuartzVariantChiseledBlock> CHISELED_CITRINE_BLOCK = 
+			REGISTRY.register("chiseled_citrine_block", () -> new QuartzVariantChiseledBlock(MapColor.COLOR_YELLOW)); 
+
+	public static final RegistryObject<QuartzVariantPillarBlock> CITRINE_PILLAR = 
+			REGISTRY.register("citrine_pillar", () -> new QuartzVariantPillarBlock(MapColor.COLOR_YELLOW)); 
+
+	public static final RegistryObject<BaseStairsBlock> CITRINE_STAIRS = 
+			REGISTRY.register("citrine_stairs", () -> new BaseStairsBlock(CITRINE_BLOCK.get())); 
+
+	public static final RegistryObject<QuartzVariantSlabBlock> CITRINE_SLAB = 
+			REGISTRY.register("citrine_slab", () -> new QuartzVariantSlabBlock(MapColor.COLOR_YELLOW)); 
+
+	public static final RegistryObject<BaseStairsBlock> SMOOTH_CITRINE_STAIRS = 
+			REGISTRY.register("smooth_citrine_stairs", () -> new BaseStairsBlock(SMOOTH_CITRINE.get())); 
+
+	public static final RegistryObject<QuartzVariantSlabBlock> SMOOTH_CITRINE_SLAB = 
+			REGISTRY.register("smooth_citrine_slab", () -> new QuartzVariantSlabBlock(SMOOTH_CITRINE.get())); 
+
+	public static final RegistryObject<QuartzVariantBricksBlock> CITRINE_BRICKS = 
+			REGISTRY.register("citrine_bricks", () -> new QuartzVariantBricksBlock(CITRINE_BLOCK.get())); 
+	
+	
 	// Galena => Lead
 	
 	public static final RegistryObject<DropExperienceBlock> GALENA_ORE = 

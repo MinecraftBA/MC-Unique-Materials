@@ -96,6 +96,15 @@ public final class ModBlockStateProvider extends BlockStateProvider {
 		
 		// Citrine
 		simpleBlock(OreBlocks.NETHERRACK_CITRINE_ORE.get());
+		quartzVariantBlock(OreBlocks.CITRINE_BLOCK.get());
+		simpleBlock(OreBlocks.CITRINE_BRICKS.get());
+		quartzVariantPillarBlock(OreBlocks.CITRINE_PILLAR.get());
+		quartzVariantStairsBlock(OreBlocks.CITRINE_STAIRS.get(), OreBlocks.CITRINE_BLOCK.get());
+		quartzVariantSlabBlock(OreBlocks.CITRINE_SLAB.get(), OreBlocks.CITRINE_BLOCK.get());
+		quartzVariantChiseledBlock(OreBlocks.CHISELED_CITRINE_BLOCK.get());
+		quartzVariantSmoothBlock(OreBlocks.SMOOTH_CITRINE.get(), OreBlocks.CITRINE_BLOCK.get());
+		quartzVariantSmoothSlabBlock(OreBlocks.SMOOTH_CITRINE_SLAB.get(), OreBlocks.CITRINE_BLOCK.get());
+		quartzVariantSmoothStairsBlock(OreBlocks.SMOOTH_CITRINE_STAIRS.get(), OreBlocks.CITRINE_BLOCK.get());
 
 		// Aventurine
 		simpleBlock(OreBlocks.NETHERRACK_AVENTURINE_ORE.get());
