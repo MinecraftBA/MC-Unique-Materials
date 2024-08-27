@@ -19,7 +19,7 @@ public final class BuildCreativeModeTabContentsEventHandler {
 
 		ResourceKey<CreativeModeTab> tabKey = event.getTabKey();
 
-		if(tabKey == CreativeModeTabs.NATURAL_BLOCKS) {
+		if (tabKey == CreativeModeTabs.NATURAL_BLOCKS) {
 
 			// Ores spawning in normal heights instead of Stone.
 			event.accept(OreItems.BAUXITE_ORE);
@@ -76,13 +76,35 @@ public final class BuildCreativeModeTabContentsEventHandler {
 
 		}
 		
-		if(tabKey == CreativeModeTabs.BUILDING_BLOCKS) {
+		if (tabKey == CreativeModeTabs.BUILDING_BLOCKS) {
 
 			event.accept(OreItems.ALUMINIUM_BLOCK);
 			event.accept(OreItems.LEAD_BLOCK);
 			event.accept(OreItems.SILICON_BLOCK);
 			event.accept(OreItems.SILVER_BLOCK);
 			event.accept(OreItems.TITANIUM_BLOCK);
+
+			// Aventurine
+			event.accept(OreItems.AVENTURINE_BLOCK);
+			event.accept(OreItems.AVENTURINE_BRICKS);
+			event.accept(OreItems.AVENTURINE_PILLAR);
+			event.accept(OreItems.AVENTURINE_SLAB);
+			event.accept(OreItems.AVENTURINE_STAIRS);
+			event.accept(OreItems.CHISELED_AVENTURINE_BLOCK);
+			event.accept(OreItems.SMOOTH_AVENTURINE);
+			event.accept(OreItems.SMOOTH_AVENTURINE_SLAB);
+			event.accept(OreItems.SMOOTH_AVENTURINE_STAIRS);
+			
+			// Citrine
+			event.accept(OreItems.CITRINE_BLOCK);
+			event.accept(OreItems.CITRINE_BRICKS);
+			event.accept(OreItems.CITRINE_PILLAR);
+			event.accept(OreItems.CITRINE_SLAB);
+			event.accept(OreItems.CITRINE_STAIRS);
+			event.accept(OreItems.CHISELED_CITRINE_BLOCK);
+			event.accept(OreItems.SMOOTH_CITRINE);
+			event.accept(OreItems.SMOOTH_CITRINE_SLAB);
+			event.accept(OreItems.SMOOTH_CITRINE_STAIRS);
 
 			// Logs (available as both natural and building blocks)
 			event.accept(TreeItems.BEECH_LOG);
@@ -104,7 +126,7 @@ public final class BuildCreativeModeTabContentsEventHandler {
 
 		}
 		
-		if(tabKey == CreativeModeTabs.INGREDIENTS) {
+		if (tabKey == CreativeModeTabs.INGREDIENTS) {
 
 			event.accept(OreItems.RAW_BAUXITE);
 			event.accept(OreItems.RAW_GALENA);

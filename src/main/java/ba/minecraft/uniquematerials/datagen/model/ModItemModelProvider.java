@@ -71,11 +71,29 @@ public final class ModItemModelProvider extends ItemModelProvider {
 		
 		generated(OreItems.CITRINE.get());
 		blockItem(OreItems.NETHERRACK_CITRINE_ORE.get());
+		blockItem(OreItems.CITRINE_BLOCK.get());
+		blockItem(OreItems.CITRINE_BRICKS.get());
+		blockItem(OreItems.CITRINE_PILLAR.get());
+		blockItem(OreItems.CITRINE_SLAB.get());
+		blockItem(OreItems.CITRINE_STAIRS.get());
+		blockItem(OreItems.CHISELED_CITRINE_BLOCK.get());
+		blockItem(OreItems.SMOOTH_CITRINE.get());
+		blockItem(OreItems.SMOOTH_CITRINE_SLAB.get());
+		blockItem(OreItems.SMOOTH_CITRINE_STAIRS.get());
 
 		// Aventurine
 		
 		generated(OreItems.AVENTURINE.get());
 		blockItem(OreItems.NETHERRACK_AVENTURINE_ORE.get());
+		blockItem(OreItems.AVENTURINE_BLOCK.get());
+		blockItem(OreItems.AVENTURINE_BRICKS.get());
+		blockItem(OreItems.AVENTURINE_PILLAR.get());
+		blockItem(OreItems.AVENTURINE_SLAB.get());
+		blockItem(OreItems.AVENTURINE_STAIRS.get());
+		blockItem(OreItems.CHISELED_AVENTURINE_BLOCK.get());
+		blockItem(OreItems.SMOOTH_AVENTURINE.get());
+		blockItem(OreItems.SMOOTH_AVENTURINE_SLAB.get());
+		blockItem(OreItems.SMOOTH_AVENTURINE_STAIRS.get());
 
 		// Galena == lead
 		

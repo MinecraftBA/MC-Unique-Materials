@@ -85,15 +85,43 @@ public final class OreBlockLootSubProvider extends BlockLootSubProvider {
 		
 		// Citrine
 		
-		add(OreBlocks.NETHERRACK_CITRINE_ORE.get(), (oreBlock) -> {
-	    	return createOreDrop(oreBlock, OreItems.CITRINE.get());
+		add(OreBlocks.NETHERRACK_CITRINE_ORE.get(), ($block) -> {
+	    	return createOreDrop($block, OreItems.CITRINE.get());
 		});
+		
+		dropSelf(OreBlocks.CITRINE_BLOCK.get());
+		dropSelf(OreBlocks.CITRINE_BRICKS.get());
+		dropSelf(OreBlocks.CITRINE_PILLAR.get());
+		add(OreBlocks.CITRINE_SLAB.get(), ($block) -> { 
+			return createSlabItemTable($block); 
+		});
+		dropSelf(OreBlocks.CITRINE_STAIRS.get());
+		dropSelf(OreBlocks.CHISELED_CITRINE_BLOCK.get());
+		dropSelf(OreBlocks.SMOOTH_CITRINE.get());
+		add(OreBlocks.SMOOTH_CITRINE_SLAB.get(), ($block) -> { 
+			return createSlabItemTable($block); 
+		});
+		dropSelf(OreBlocks.SMOOTH_CITRINE_STAIRS.get());
 
 		// Aventurine
 		
 		add(OreBlocks.NETHERRACK_AVENTURINE_ORE.get(), (oreBlock) -> {
 	    	return createOreDrop(oreBlock, OreItems.AVENTURINE.get());
 		});
+		
+		dropSelf(OreBlocks.AVENTURINE_BLOCK.get());
+		dropSelf(OreBlocks.AVENTURINE_BRICKS.get());
+		dropSelf(OreBlocks.AVENTURINE_PILLAR.get());
+		add(OreBlocks.AVENTURINE_SLAB.get(), ($block) -> { 
+			return createSlabItemTable($block); 
+		});
+		dropSelf(OreBlocks.AVENTURINE_STAIRS.get());
+		dropSelf(OreBlocks.CHISELED_AVENTURINE_BLOCK.get());
+		dropSelf(OreBlocks.SMOOTH_AVENTURINE.get());
+		add(OreBlocks.SMOOTH_AVENTURINE_SLAB.get(), ($block) -> { 
+			return createSlabItemTable($block); 
+		});
+		dropSelf(OreBlocks.SMOOTH_AVENTURINE_STAIRS.get());
 
 		// Galena => Lead
 		
