@@ -5,6 +5,7 @@ import com.mojang.logging.LogUtils;
 import ba.minecraft.uniquematerials.common.blocks.OreBlocks;
 import ba.minecraft.uniquematerials.common.blocks.TreeBlocks;
 import ba.minecraft.uniquematerials.common.items.OreItems;
+import ba.minecraft.uniquematerials.common.items.ToolItems;
 import ba.minecraft.uniquematerials.common.items.TreeItems;
 import ba.minecraft.uniquematerials.common.tags.ModBlockTags;
 import ba.minecraft.uniquematerials.common.tags.ModItemTags;
@@ -44,6 +45,7 @@ public class UniqueMaterialsMod
         
         // Registration of mod provided items.
         OreItems.REGISTRY.register(modEventBus);
+        ToolItems.REGISTRY.register(modEventBus);
         TreeItems.REGISTRY.register(modEventBus);
 
         // Register the commonSetup method for modloading

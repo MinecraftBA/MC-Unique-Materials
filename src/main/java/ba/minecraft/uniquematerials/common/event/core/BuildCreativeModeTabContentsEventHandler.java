@@ -2,6 +2,7 @@ package ba.minecraft.uniquematerials.common.event.core;
 
 import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
 import ba.minecraft.uniquematerials.common.items.OreItems;
+import ba.minecraft.uniquematerials.common.items.ToolItems;
 import ba.minecraft.uniquematerials.common.items.TreeItems;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
@@ -144,6 +145,12 @@ public final class BuildCreativeModeTabContentsEventHandler {
 			event.accept(OreItems.SILICON_INGOT);
 			event.accept(OreItems.SILVER_INGOT);
 			event.accept(OreItems.TITANIUM_INGOT);
+
+		}
+
+		if (tabKey == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+
+			event.accept(ToolItems.TILE_CARVER);
 
 		}
 

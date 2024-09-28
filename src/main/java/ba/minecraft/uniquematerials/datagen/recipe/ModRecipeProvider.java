@@ -6,6 +6,7 @@ import com.google.common.collect.ImmutableList;
 
 import ba.minecraft.uniquematerials.common.blocks.OreBlocks;
 import ba.minecraft.uniquematerials.common.items.OreItems;
+import ba.minecraft.uniquematerials.common.items.ToolItems;
 import ba.minecraft.uniquematerials.common.items.TreeItems;
 import ba.minecraft.uniquematerials.common.tags.ModItemTags;
 import net.minecraft.core.HolderLookup.Provider;
@@ -17,6 +18,7 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -171,6 +173,16 @@ public final class ModRecipeProvider extends RecipeProvider {
 	}
 	
 	private void buildCraftingRecipes(RecipeOutput recipeOutput) {
+
+		// Tools
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ToolItems.TILE_CARVER.get(), 1)
+	    	.define('I', Items.IRON_NUGGET)
+	    	.define('S', Items.STICK)
+	    	.pattern(" I ")
+	    	.pattern(" S ")
+	    	.pattern("   ")
+	    	.unlockedBy(getHasName(Items.IRON_NUGGET), has(Items.IRON_NUGGET))
+	    	.save(recipeOutput);
 		
 		// Aventurine
         chiseledBuilder(RecipeCategory.BUILDING_BLOCKS, OreBlocks.CHISELED_AVENTURINE_BLOCK.get(), Ingredient.of(OreBlocks.AVENTURINE_SLAB.get()))
@@ -203,37 +215,38 @@ public final class ModRecipeProvider extends RecipeProvider {
 	        .unlockedBy("has_aventurine_block", has(OreBlocks.AVENTURINE_BLOCK.get()))
 	        .unlockedBy("has_aventurine_pillar", has(OreBlocks.AVENTURINE_PILLAR.get()))
 	        .save(recipeOutput);
-	    	//Citrine
+
+	    //Citrine
 	    chiseledBuilder(RecipeCategory.BUILDING_BLOCKS, OreBlocks.CHISELED_CITRINE_BLOCK.get(), Ingredient.of(OreBlocks.CITRINE_SLAB.get()))
-        .unlockedBy("has_chiseled_citrine_block", has(OreBlocks.CHISELED_CITRINE_BLOCK.get()))
-        .unlockedBy("has_citrine_block", has(OreBlocks.CITRINE_BLOCK.get()))
-        .unlockedBy("has_citrine_pillar", has(OreBlocks.CITRINE_PILLAR.get()))
-        .save(recipeOutput);
-    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, OreBlocks.CITRINE_PILLAR.get(), 2)
-        .define('#', OreBlocks.CITRINE_BLOCK.get())
-        .pattern("#")
-        .pattern("#")
-        .unlockedBy("has_chiseled_citrine_block", has(OreBlocks.CHISELED_CITRINE_BLOCK.get()))
-        .unlockedBy("has_citrine_block", has(OreBlocks.CITRINE_BLOCK.get()))
-        .unlockedBy("has_citrine_pillar", has(OreBlocks.CITRINE_PILLAR.get()))
-        .save(recipeOutput);
-    twoByTwoPacker(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.CITRINE_BLOCK.get(), OreItems.CITRINE.get());
-    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, OreBlocks.CITRINE_BRICKS.get(), 4)
-        .define('#', OreBlocks.CITRINE_BLOCK.get())
-        .pattern("##")
-        .pattern("##")
-        .unlockedBy("has_citrine_block", has(OreBlocks.CITRINE_BLOCK.get()))
-        .save(recipeOutput);
-    slabBuilder(RecipeCategory.BUILDING_BLOCKS, OreBlocks.CITRINE_SLAB.get(), Ingredient.of(OreBlocks.CHISELED_CITRINE_BLOCK.get(), OreBlocks.CITRINE_BLOCK.get(), OreBlocks.CITRINE_PILLAR.get()))
-        .unlockedBy("has_chiseled_citrine_block", has(OreBlocks.CHISELED_CITRINE_BLOCK.get()))
-        .unlockedBy("has_citrine_block", has(OreBlocks.CITRINE_BLOCK.get()))
-        .unlockedBy("has_citrine_pillar", has(OreBlocks.CITRINE_PILLAR.get()))
-        .save(recipeOutput);
-    stairBuilder(OreBlocks.CITRINE_STAIRS.get(), Ingredient.of(OreBlocks.CHISELED_CITRINE_BLOCK.get(), OreBlocks.CITRINE_BLOCK.get(), OreBlocks.CITRINE_PILLAR.get()))
-        .unlockedBy("has_chiseled_citrine_block", has(OreBlocks.CHISELED_CITRINE_BLOCK.get()))
-        .unlockedBy("has_citrine_block", has(OreBlocks.CITRINE_BLOCK.get()))
-        .unlockedBy("has_citrine_pillar", has(OreBlocks.CITRINE_PILLAR.get()))
-        .save(recipeOutput);
+	        .unlockedBy("has_chiseled_citrine_block", has(OreBlocks.CHISELED_CITRINE_BLOCK.get()))
+	        .unlockedBy("has_citrine_block", has(OreBlocks.CITRINE_BLOCK.get()))
+	        .unlockedBy("has_citrine_pillar", has(OreBlocks.CITRINE_PILLAR.get()))
+	        .save(recipeOutput);
+	    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, OreBlocks.CITRINE_PILLAR.get(), 2)
+	        .define('#', OreBlocks.CITRINE_BLOCK.get())
+	        .pattern("#")
+	        .pattern("#")
+	        .unlockedBy("has_chiseled_citrine_block", has(OreBlocks.CHISELED_CITRINE_BLOCK.get()))
+	        .unlockedBy("has_citrine_block", has(OreBlocks.CITRINE_BLOCK.get()))
+	        .unlockedBy("has_citrine_pillar", has(OreBlocks.CITRINE_PILLAR.get()))
+	        .save(recipeOutput);
+    	twoByTwoPacker(recipeOutput, RecipeCategory.BUILDING_BLOCKS, OreBlocks.CITRINE_BLOCK.get(), OreItems.CITRINE.get());
+    	ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, OreBlocks.CITRINE_BRICKS.get(), 4)
+	        .define('#', OreBlocks.CITRINE_BLOCK.get())
+	        .pattern("##")
+	        .pattern("##")
+	        .unlockedBy("has_citrine_block", has(OreBlocks.CITRINE_BLOCK.get()))
+	        .save(recipeOutput);
+    	slabBuilder(RecipeCategory.BUILDING_BLOCKS, OreBlocks.CITRINE_SLAB.get(), Ingredient.of(OreBlocks.CHISELED_CITRINE_BLOCK.get(), OreBlocks.CITRINE_BLOCK.get(), OreBlocks.CITRINE_PILLAR.get()))
+	        .unlockedBy("has_chiseled_citrine_block", has(OreBlocks.CHISELED_CITRINE_BLOCK.get()))
+	        .unlockedBy("has_citrine_block", has(OreBlocks.CITRINE_BLOCK.get()))
+	        .unlockedBy("has_citrine_pillar", has(OreBlocks.CITRINE_PILLAR.get()))
+	        .save(recipeOutput);
+	    stairBuilder(OreBlocks.CITRINE_STAIRS.get(), Ingredient.of(OreBlocks.CHISELED_CITRINE_BLOCK.get(), OreBlocks.CITRINE_BLOCK.get(), OreBlocks.CITRINE_PILLAR.get()))
+	        .unlockedBy("has_chiseled_citrine_block", has(OreBlocks.CHISELED_CITRINE_BLOCK.get()))
+	        .unlockedBy("has_citrine_block", has(OreBlocks.CITRINE_BLOCK.get()))
+	        .unlockedBy("has_citrine_pillar", has(OreBlocks.CITRINE_PILLAR.get()))
+	        .save(recipeOutput);
 	}
 
 	private void buildSmeltingRecipes(RecipeOutput recipeOutput) { 

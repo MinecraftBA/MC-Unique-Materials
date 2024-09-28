@@ -2,6 +2,7 @@ package ba.minecraft.uniquematerials.datagen.lang;
 
 import ba.minecraft.uniquematerials.common.core.UniqueMaterialsMod;
 import ba.minecraft.uniquematerials.common.items.OreItems;
+import ba.minecraft.uniquematerials.common.items.ToolItems;
 import ba.minecraft.uniquematerials.common.items.TreeItems;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -16,8 +17,15 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 	protected void addTranslations() {
 		
 		addOreItems();
+		addToolItems();
 		addTreeItems();
 		
+	}
+	
+	private void addToolItems() {
+
+		add(ToolItems.TILE_CARVER.get(), "Tile Carver");
+
 	}
 
 
